@@ -1,41 +1,46 @@
-from lattice2d import *
-from wraplattice2d import *
+<<<<<<< game.py
+from lattice import *
+from wraplattice import *
 
 
-class Game2D():
-	def __init__(self, payoff, dim, maxGen = False, name = "test", geom = "rect"):
+class Game():
+	def __init__(self, payoff, dim, maxGen = False, name = "test", geom = "rect", freqs = False):
 		self.dim = dim
 		self.payoff = payoff
 		self.name = name
 		self.maxGen = maxGen
 		
-		ic = [1 for i in payoff]
+
+		ic = freqs if freqs else [1 for i in payoff]
+
 		if (geom == "rect"):
-			self.board = Lattice2D(dim, rand = True, freqs = ic)
+			self.board = Lattice(dim, rand = True, freqs = ic)
 		elif (geom == "sphere"):
-			self.board = WrapLattice2D(dim, rand = True, freqs = ic)
-		self.fits = Lattice2D(dim)
+			self.board = WrapLattice(dim, rand = True, freqs = ic)
+
+		self.fits = Lattice(dim)
 		self.calcFitness()
 		self.count = self.board.count()
-		self.outFile = open(name + ".csv", "w")
+		self.statFile = open(name + "-stats.csv", "w")
 
-		self.statFile = open(name + "-params" + ".txt", "w")
-		self.statFile.write("\n".join(map(str, [payoff, dim, maxGen])))
-		self.statFile.close()
+		self.setupFile = open(name + "-params" + ".txt", "w")
+		self.setupFile.write("\n".join(map(str, [payoff, dim, maxGen])))
+		self.setupFile.close()
 		
 		self.age = 0
 
 	def calcFitness(self):
 		for x in range(self.dim):
 			for y in range(self.dim):
-				p = [x,y]
-				neighbors = self.board.neighborhood(p,1)
-				tp = sum(
-					self.payoff
-					[self.board.access(p)]
-					[self.board.access(i)] 
-					for i in neighbors)
-				self.fits.set(p, tp)
+				for z in range(self.dim):
+					p = [x,y,z]
+					neighbors = self.board.neighborhood(p,1)
+					tp = sum(
+						self.payoff
+						[self.board.access(p)]
+						[self.board.access(i)] 
+						for i in neighbors)
+					self.fits.set(p, tp)
 
 	def fitness(self, p):
 		return self.fits.access(p)
@@ -62,7 +67,12 @@ class Game2D():
 
 	def stats(self):
 		freq = normalize(self.count)
-		st = [gen] + freq + clust
+		st = [self.age] + freq
 		self.outFile.write(",".join(map(str, st)))
 
+	def end(self):
+		self.outFile.close()
+
 #todo: stat-tracking
+=======
+>>>>>>> file3

@@ -1,8 +1,8 @@
-from lattice2d import *
-from wraplattice2d import *
+from lattice import *
+from wraplattice import *
 
 
-class Game2D():
+class Game():
 	def __init__(self, payoff, dim, maxGen = False, name = "test", geom = "rect", freqs = False):
 		self.dim = dim
 		self.payoff = payoff
@@ -10,14 +10,16 @@ class Game2D():
 		self.maxGen = maxGen
 		
 		ic = freqs if freqs else [1 for i in payoff]
+
 		if (geom == "rect"):
-			self.board = Lattice2D(dim, rand = True, freqs = ic)
+			self.board = Lattice(dim, rand = True, freqs = ic)
 		elif (geom == "sphere"):
-			self.board = WrapLattice2D(dim, rand = True, freqs = ic)
-		self.fits = Lattice2D(dim)
+			self.board = WrapLattice(dim, rand = True, freqs = ic)
+
+		self.fits = Lattice(dim)
 		self.calcFitness()
 		self.count = self.board.count()
-		self.outFile = open(name + "-stats.csv", "w")
+		self.statFile = open(name + "-stats.csv", "w")
 
 		self.setupFile = open(name + "-params" + ".txt", "w")
 		self.setupFile.write("\n".join(map(str, [payoff, dim, maxGen])))
@@ -34,16 +36,15 @@ class Game2D():
 			for i in neighbors)
 		return tp
 
-
 	def calcFitness(self):
 		for x in range(self.dim):
 			for y in range(self.dim):
-				p = [x,y]
-				self.fits.set(p, self.calcCellFitness(p))
+				for z in range(self.dim):
+					p = [x,y,z]
+					self.fits.set(p, self.calcCellFitness(p))
 
 	def fitness(self, p):
 		return self.fits.access(p)
-
 
 	def update(self): #returns a list giving changed value and what it was changed to
 
@@ -74,10 +75,9 @@ class Game2D():
 
 	def stats(self):
 		freq = normalize(self.count)
-		st = [gen] + freq + clust
+		st = [self.age] + freq
 		self.outFile.write(",".join(map(str, st)))
 
-	def end(self):
-		self.outFile.close()
+
 
 #todo: stat-tracking

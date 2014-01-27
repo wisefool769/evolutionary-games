@@ -1,6 +1,4 @@
-todo 
-2D lattice classes
-2D game class
-test out graphics
-add geom argument to game
-writing to file
+todo
+graphics for 3d sim
+writing stats to file
+clustering

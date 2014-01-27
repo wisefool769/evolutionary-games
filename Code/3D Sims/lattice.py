@@ -63,7 +63,7 @@ class Lattice:
 		return freqs
 
 	def randElement(self):
-		return [randint(0,self.dim) for i in range(3)]
+		return [randint(0,self.dim-1) for i in range(3)]
 
 	def neighborhood(self,p,r):
 		x = p[0]
