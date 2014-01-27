@@ -3,14 +3,19 @@ from wraplattice import *
 
 
 class Game():
-	def __init__(self, payoff, dim, maxGen = False, name = "test"):
+	def __init__(self, payoff, dim, maxGen = False, name = "test", geom = "rect"):
 		self.dim = dim
 		self.payoff = payoff
 		self.name = name
 		self.maxGen = maxGen
 		
 		ic = [1 for i in payoff]
-		self.board = Lattice(dim, rand = True, freqs = ic)
+
+		if (geom == "rect"):
+			self.board = Lattice(dim, rand = True, freqs = ic)
+		elif (geom == "sphere"):
+			self.board = WrapLattice(dim, rand = True, freqs = ic)
+
 		self.fits = Lattice(dim)
 		self.calcFitness()
 		self.count = self.board.count()
