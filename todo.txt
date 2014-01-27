@@ -2,3 +2,5 @@ todo
 2D lattice classes
 2D game class
 test out graphics
+add geom argument to game
+writing to file

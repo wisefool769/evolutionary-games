@@ -1,8 +1,8 @@
-from lattice import *
-from wraplattice import *
+from lattice2d import *
+from wraplattice2d import *
 
 
-class Game():
+class Game2D():
 	def __init__(self, payoff, dim, maxGen = False, name = "test"):
 		self.dim = dim
 		self.payoff = payoff
@@ -10,8 +10,8 @@ class Game():
 		self.maxGen = maxGen
 		
 		ic = [1 for i in payoff]
-		self.board = Lattice(dim, rand = True, freqs = ic)
-		self.fits = Lattice(dim)
+		self.board = Lattice2D(dim, rand = True, freqs = ic)
+		self.fits = Lattice2D(dim)
 		self.calcFitness()
 		self.count = self.board.count()
 		self.outFile = open(name + ".csv", "w")
@@ -25,15 +25,14 @@ class Game():
 	def calcFitness(self):
 		for x in range(self.dim):
 			for y in range(self.dim):
-				for z in range(self.dim):
-					p = [x,y,z]
-					neighbors = self.board.neighborhood(p,1)
-					tp = sum(
-						self.payoff
-						[self.board.access(p)]
-						[self.board.access(i)] 
-						for i in neighbors)
-					self.fits.set(p, tp)
+				p = [x,y]
+				neighbors = self.board.neighborhood(p,1)
+				tp = sum(
+					self.payoff
+					[self.board.access(p)]
+					[self.board.access(i)] 
+					for i in neighbors)
+				self.fits.set(p, tp)
 
 	def fitness(self, p):
 		return self.fits.access(p)
