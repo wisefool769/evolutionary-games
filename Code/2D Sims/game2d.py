@@ -45,6 +45,12 @@ class Game2D():
 		return self.fits.access(p)
 
 
+	def isFinished(self):
+		if self.maxGen and self.age > self.maxGen:
+			self.end()
+			return True
+		return False
+
 	def update(self): #returns a list giving changed value and what it was changed to
 
 		toReplace = self.board.randElement() #select random element
@@ -70,14 +76,15 @@ class Game2D():
 			self.count[currentValue] -= 1
 			self.count[replaceValue] += 1
 		self.age += 1
+		self.stats()
+
 		return [toReplace, replaceValue]
 
 	def stats(self):
 		freq = normalize(self.count)
-		st = [gen] + freq + clust
-		self.outFile.write(",".join(map(str, st)))
+		st = ",".join(map(str,[self.age] + freq))
+		self.outFile.write(st + "\n")
 
 	def end(self):
 		self.outFile.close()
 
-#todo: stat-tracking
