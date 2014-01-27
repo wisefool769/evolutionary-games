@@ -56,11 +56,11 @@ class Game():
 			self.count[rv] -= 1
 			self.count[pv] += 1
 		self.age += 1
+		return [r, pv]
 
 	def stats(self):
 		freq = normalize(self.count)
 		st = [gen] + freq + clust
 		self.outFile.write(",".join(map(str, st)))
 
-p = [[1,0],[0,1]]
-g = Game(p, 10)
+#todo: stat-tracking

@@ -28,18 +28,15 @@ def startStop():
 
 def colorSquare(i, j):
     theColor = colors[g.board.access([i,j,level])]
-    theImage.put(theColor, to=(i*squareWidth,j*squareWidth,(i+1)*squareWidth,(j+1)*squareWidth))
+    theImage.put(t)
 
 
 def simulate():
     if running:
         for step in range(1000):
-            [r,val] = g.update()
-            if r[2] == level:                
-            s[i,j] = -s[i,j]
-            colorSquare(i, j)
-    theWindow.after(1,simulate)
-
-
-simulate()
-theWindow.mainloop() 
+            g.update()
+            eDiff = deltaE(i,j)
+            if eDiff <= 0 or random.random() < math.exp(-eDiff/T):    # Metropolis!
+                s[i,j] = -s[i,j]
+                colorSquare(i, j)
+    theWindow.after(1,simulate)   
