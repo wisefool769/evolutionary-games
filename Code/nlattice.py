@@ -45,6 +45,7 @@ class NLattice:
 
 		dists = [i for i in range(-1 * interDist, interDist + 1)] #possible distances -r to r
 		self.offsets = [i for i in itertools.product(dists, repeat = self.d)]
+		self.offsets.remove((0,0,0))
 		# all possible combinations of dists in n-d
 
 	def access(self,p):
@@ -79,13 +80,24 @@ class NLattice:
 
 	def neighborhood(self,p):
 		return filter(self.inArray, 
-			map(lambda x: tupsum(p, x), self.offsets))
+				map(lambda x: tupsum(p, x), self.offsets))
+		
 
 
+class NWrapLattice(NLattice):
+	def wrap(self, p):
+		p = list(p)
+		for i,val in enumerate(p):
+			if val < 0:
+				p[i] += self.dim
+			if val >= self.dim:
+				p[i] -= self.dim
+		return tuple(p)
 
-
-
-
-
-
-
+	def neighborhood(self, p):
+		points = map(lambda x: tupsum(p, x), self.offsets)
+		outside = map(self.wrap,
+			filter(lambda x: not self.inArray(x),
+				points))
+		inside = filter(self.inArray, points)
+		return [inside + outside]

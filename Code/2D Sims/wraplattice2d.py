@@ -2,12 +2,13 @@ from lattice2d import Lattice2D
 
 class WrapLattice2D(Lattice2D):
 	def wrap(self, p):
+		p = list(p)
 		for i,val in enumerate(p):
 			if val < 0:
 				p[i] += self.dim
 			if val >= dim:
 				p[i] -= self.dim
-		return p
+		return tuple(p)
 
 	def neighborhood(self, p, r):
 		[x,y] = p
