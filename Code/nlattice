@@ -21,18 +21,6 @@ def choose(v):		#choose an item given vector of probabilities
 
 
 class Lattice:
-	def access(self,p):
-		if self.inArray(p):
-			return self.grid[p[2]][p[1]][p[0]]
-		return False
-
-	def set(self,p,val):
-		if self.inArray(p):
-			self.grid[p[2]][p[1]][p[0]] = val
-
-	def increment(self, p, inc):
-		if self.inArray(p):
-			self.grid[p[2]][p[1]][p[0]] += inc
 
 	def __init__(self, dim, 
 	 freqs = [0.333, 0.333, 0.333], rand = True, grid = 0):
@@ -46,6 +34,21 @@ class Lattice:
 			self.dim = dim
 			self.numTypes = 0
 		self.freqs = self.count()
+		
+	def access(self,p):
+		if self.inArray(p):
+			return self.grid[p[2]][p[1]][p[0]]
+		return False
+
+	def set(self,p,val):
+		if self.inArray(p):
+			self.grid[p[2]][p[1]][p[0]] = val
+
+	def increment(self, p, inc):
+		if self.inArray(p):
+			self.grid[p[2]][p[1]][p[0]] += inc
+
+
 
 	def inArray(self, p):
 		for c in p:

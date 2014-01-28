@@ -46,8 +46,14 @@ class Game():
 	def fitness(self, p):
 		return self.fits.access(p)
 
-	def update(self): #returns a list giving changed value and what it was changed to
 
+	def isFinished(self):
+		if self.maxGen and self.age > self.maxGen:
+			self.end()
+			return True
+		return False
+
+	def update(self): #returns a list giving changed value and what it was changed to	
 		toReplace = self.board.randElement() #select random element
 		currentValue = self.board.access(toReplace) #get value
 		neighbors = self.board.neighborhood(toReplace,1) #get neighbors
@@ -71,13 +77,15 @@ class Game():
 			self.count[currentValue] -= 1
 			self.count[replaceValue] += 1
 		self.age += 1
+
+		self.stats()
 		return [toReplace, replaceValue]
 
 	def stats(self):
 		freq = normalize(self.count)
-		st = [self.age] + freq
-		self.outFile.write(",".join(map(str, st)))
+		st = ",".join(map(str,[self.age] + freq))
+		self.outFile.write(",".join(map(str, st)) + "\n")
 
+	def end(self):
+		self.outFile.close()
 
-
-#todo: stat-tracking

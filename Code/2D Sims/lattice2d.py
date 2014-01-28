@@ -56,10 +56,8 @@ class Lattice2D:
 
 	def count(self):
 		freqs = [0 for i in range(self.numTypes)]
-		#print(self.numTypes)
-		for x in range(self.dim):
-			for y in range(self.dim):
-					freqs[self.access([x,y])] += 1
+		for i in self.grid.flat:
+			freqs[i] += 1
 		return freqs
 
 	def randElement(self):

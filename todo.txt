@@ -1,4 +1,5 @@
 todo
+generalize to n-dimensional lattice
 graphics for 3d sim
 writing stats to file
 clustering
