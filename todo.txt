@@ -1,5 +1,9 @@
 todo
-generalize to n-dimensional lattice
-graphics for 3d sim
-writing stats to file
+
+allow continuation from some point
+graphics for n-d sim
+have nlattice inherit directly from ndarray
 clustering
+
+
+determine appropriate size for simulation -- in progress

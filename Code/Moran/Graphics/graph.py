@@ -1,13 +1,14 @@
 import Tkinter, random
-from game2d import *
+from ..Sims.game import *
 
-dim = 100
+dim = 50
+depth = 2
 level = dim // 2
 squareWidth = 10
 canvasWidth = dim * squareWidth
 payoff = [[0,2,0],[0,0,2],[2,0,0]]
 colors = ["#f91b23", "#00a33d", "#3131cd"] #rgb
-g = Game2D(payoff, dim, freqs = [1,0,1])
+g = Game(payoff, 2, dim, freqs = [1,0,1])
 running = False
 
 theWindow = Tkinter.Tk()
@@ -36,21 +37,22 @@ goButton = Tkinter.Button(controlFrame, text="Start", width=8, command=startStop
 goButton.pack(side="left")
 
 
-def colorSquare(i, j):
-    theColor = colors[g.board.access([i,j])]
-    theImage.put(theColor, to=(i*squareWidth,j*squareWidth,(i+1)*squareWidth,(j+1)*squareWidth))
+def colorSquare(point):
+    theColor = colors[g.board.access(point)]
+    x,y = point
+    theImage.put(theColor, to=(x*squareWidth,y*squareWidth,(x+1)*squareWidth,(y+1)*squareWidth))
 
 
 def simulate():
     if running:
         for step in range(1000):
             [r,val] = g.update()
-            colorSquare(r[0], r[1])
+            colorSquare(r)
     theWindow.after(1,simulate)
 
-for i in range(dim):
-    for j in range(dim):
-        colorSquare(i,j)
+for (point,value) in g.board.iter():
+    print(point)
+    colorSquare(point)
 
 simulate()
 theWindow.mainloop() 

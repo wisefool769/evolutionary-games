@@ -1,5 +1,4 @@
 from random import uniform, randint
-from collections import Counter
 from numpy import *
 import itertools
 
@@ -20,12 +19,12 @@ def choose(v):		#choose an item given vector of probabilities
 			r -= val
 	return (len(v) - 1)
 
-def narray(func, d, dim):
+def narray(func, d, dim): #initialize d-dimensional array with lengths dim
 	if d == 1:
 		return map(func, [i for i in range(dim)])
 	return [narray(func, d - 1, dim) for i in range(dim)]
 
-def tupsum(t1, t2):
+def tupsum(t1, t2): #add tuples t1 and t2 elementwise
 	return tuple(t1[i] + t2[i] for i in range(len(t1)))
 
 class NLattice:
@@ -38,15 +37,18 @@ class NLattice:
 			self.grid = array(narray(lambda x : choose(freqs), d, dim))
 			self.numTypes = len(freqs)
 			self.dim = dim
-		else: 
-			self.grid = array(grid)
+		else: #initialize NLattice from existing array
+			self.grid = array(grid) 
 			self.dim = dim
 			self.numTypes = 0
 
 		dists = [i for i in range(-1 * interDist, interDist + 1)] #possible distances -r to r
-		self.offsets = [i for i in itertools.product(dists, repeat = self.d)]
-		self.offsets.remove((0,0,0))
-		# all possible combinations of dists in n-d
+		#print(self.d)
+		self.offsets = [i for i in itertools.product(dists, repeat = self.d)] #black magic
+		#all possible tuples of length d with entries drawn from dists
+		#print(self.offsets)
+		self.offsets.remove(tuple([0] * self.d)) #remove offset 0
+
 
 	def access(self,p):
 		return self.grid.item(p)
@@ -79,7 +81,7 @@ class NLattice:
 		return tuple(randint(0,self.dim - 1) for i in range(self.d))
 
 	def neighborhood(self,p):
-		return filter(self.inArray, 
+		return filter(self.inArray, #add point in question to every offset and filter out-of-bounds
 				map(lambda x: tupsum(p, x), self.offsets))
 
 	def iter(self):
@@ -98,9 +100,9 @@ class NWrapLattice(NLattice):
 		return tuple(p)
 
 	def neighborhood(self, p):
-		points = map(lambda x: tupsum(p, x), self.offsets) # add every offset to 
-		outside = map(self.wrap,
+		points = map(lambda x: tupsum(p, x), self.offsets) # add point to every offset
+		outside = map(self.wrap, #wrap the ones that fall outside
 			filter(lambda x: not self.inArray(x),
 				points))
-		inside = filter(self.inArray, points)
+		inside = filter(self.inArray, points) #do nothing to the ones inside
 		return [inside + outside]

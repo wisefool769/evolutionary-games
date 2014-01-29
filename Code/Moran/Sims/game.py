@@ -1,7 +1,7 @@
 from nlattice import *
 
 class Game():
-	def __init__(self, payoff, dim, d, maxGen = False,
+	def __init__(self, payoff, d, dim, maxGen = False,
 	 name = "test", geom = "rect", freqs = False):
 		self.dim = dim
 		self.d = d
@@ -46,7 +46,7 @@ class Game():
 
 
 	def isFinished(self):
-		if self.maxGen and self.age > self.maxGen:
+		if (self.maxGen and self.age > self.maxGen): 
 			self.end()
 			return True
 		return False
@@ -59,29 +59,36 @@ class Game():
 		replaceWith = neighbors[choose(neighborFits)]
 		replaceValue = self.board.access(replaceWith) #choose neighbor based on fitness
 		#print(p)
-		if currentValue != replaceValue:
+		if currentValue != replaceValue: #then nothing changes
 			newFit = 0
 			for i in neighbors:
 				neighborValue = self.board.access(i)
 				fitInc = self.payoff[neighborValue][replaceValue] 
-				- self.payoff[neighborValue][currentValue]
-				self.fits.increment(i, fitInc)
+				- self.payoff[neighborValue][currentValue]  #update all neighbors 
+				self.fits.increment(i, fitInc) #based on difference in payoff entries for old and new value
 				
-				newFit += self.payoff[replaceValue][neighborValue]
+				newFit += self.payoff[replaceValue][neighborValue] #tally up fitness of new guy
 
 			self.board.set(toReplace, replaceValue)
 			self.fits.set(toReplace, newFit)
 			
 			self.count[currentValue] -= 1
 			self.count[replaceValue] += 1
-		self.age += 1
+		self.age += 1 #update which generation we're on
 
-		self.stats()
-		return [toReplace, replaceValue]
+		if self.age % 1000 == 0:
+			self.stats()
+			if self.age % 100000 == 0:
+				self.statFile.flush()
+		return [toReplace, replaceValue] #for debugging
+
+	def numAlive(self):
+		return reduce(lambda rest, x: rest + 1 if x != 0 else rest, self.count , 0)
 
 	def stats(self):
 		freq = normalize(self.count)
 		st = ",".join(map(str,[self.age] + freq))
+		print(st)
 		self.statFile.write(st + "\n")
 
 	def end(self):
