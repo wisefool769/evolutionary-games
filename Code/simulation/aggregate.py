@@ -16,14 +16,17 @@ def agg(data_dir, study_name):
 	param_data = map(str.strip, param_file.readlines())
 	param_header, param_rows = param_data[0], param_data[1:]
 
+	param_freqs = []
+
 	for i,f in enumerate(stat_files):
 		full_name = data_dir + f
-		num = int(f[4 : f.index("-")])
+		num = int(f[f.index("_") + 1 : f.index("-")])
+		print(num)
 		end_freqs = ','.join(get_last_row(full_name)[1:])
 		param_freqs.append(param_rows[i] + ',' + end_freqs)
 
-	header = param_header + ',Type 1,Type 2,Type 3 \n'
-	with open(data_dir + 'param-scan.csv', 'w') as pf_file:
+	header = param_header + ',Type 1,Type 2,Type 3,Clustering\n'
+	with open(data_dir + 'dingli_param-scan.csv', 'w') as pf_file:
 		pf_file.write(header)
 		pf_file.write('\n'.join(param_freqs))
 

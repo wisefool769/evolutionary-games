@@ -1,5 +1,4 @@
-
-
+make it so result files don't get repeatedly made and move automatically to results folder
 
 Run Some 3D Sims on Dingli
 	Create a list of params to test for Dingli

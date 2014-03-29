@@ -21,15 +21,6 @@ class Game():
 		self.calcFitness()
 		self.count = self.board.count()
 		self.statFile = open(name + "-stats.csv", "w")
-
-		self.setupFile = open(name + "-params" + ".txt", "w")
-		self.setupFile.write("payoff = "+ str(payoff) + "\n")
-		self.setupFile.write("depth = "+ str(d) + "\n")
-		self.setupFile.write("dimensions = "+ str(dim) + "\n")
-		self.setupFile.write("maxGen = "+ str(maxGen) + "\n")
-		self.setupFile.write("geom = "+ geom + "\n")
-		self.setupFile.write("freqs = " + str(freqs) + "\n")
-		self.setupFile.close()
 		
 		self.age = 0
 
@@ -93,9 +84,8 @@ class Game():
 	def stats(self):
 		freq = normalize(self.count)
 		cl = [self.board.cluster()]
-		print(cl)
 		st = ",".join(map(str,[self.age] + freq + cl))
-		print(st)
+		#print(st)
 		self.statFile.write(st + "\n")
 
 
