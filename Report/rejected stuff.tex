@@ -1,0 +1,65 @@
+%Rejected Shit
+
+The replicator equation then defines a 2-dimensional dynamical system in $p_1$ and $p_2$. Define
+ $$\vec{f}(p_1,p_2) =
+ {\begin{bmatrix} 
+\dot{p_1}\\
+ \dot{p_2} 
+\end{bmatrix}} =
+{\begin{bmatrix} p_1 (W_1-\overline{W})\\
+p_2 (W_2 - \overline{W}) %create 2D dynamical system
+\end{bmatrix}}$$
+$$ = {\begin{bmatrix}
+\displaystyle{p_1(k-n) + p_1^2 (n - k) + p_1 p_2(c + n - k - \frac{1}{2}) + p_1 p_2^2 (\frac{1}{2} - \frac{c}{2})}\\
+\displaystyle{p_2(\frac{1}{2} + k - c) - k p_1 p_2 - p_2^2(1 - \frac{3 c}{2} + k) + \frac{p_2^3}{2} ( 1- c)}
+\end{bmatrix}}$$
+
+Now we take the Jacobian of this system, evaluated at the fixed point.
+%$$ J = %compute Jacobian
+%{\begin{bmatrix}
+
+$$ J = {\begin{bmatrix}
+\displaystyle{\frac{\partial{f_1}}{\partial{p_1}}} & \displaystyle{\frac{\partial{f_1}}{\partial{p_2}}} \\
+\displaystyle{\frac{\partial{f_2}}{\partial{p_1}}} & 
+\displaystyle{\frac{\partial{f_2}}{\partial{p_2}}}
+\end{bmatrix}}\bigg|_{p^*}$$
+	
+
+\comment{ 
+$$ J = {\begin{bmatrix}
+\partial{}_{p_1} f_1 & \partial{}_{p_1} f_1 \\
+\partial{}_{p_1} f_1 & \partial{}_{p_1} f_1 \\
+\end{bmatrix}} $$
+}
+
+Where $J_{ij}$ refers to the entry in the $i^{th}$ row and $j^{th}$ column, we have the following entries.
+
+\begin{equation}
+\label{J11}
+\begin{split}
+J_{11} &= \frac{n-k}{2 n} + \frac{c (n-k)}{n} + \frac{k(n-k)}{n} + \frac{(n-k)^2}{2 n^2} - \frac{c (n-k)^2}{2 n^2}\\
+& - \frac{k (k - c k - c n + 2 k n)}{n^2} + \frac{k - c k - c n + 2 k n}{n}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\label{J11}
+\begin{split}
+ J_{12} &= \frac{c k + c n - 2 k n - k}{4 n^2} + \frac{c (k - c k - c n + 2 k n)}{2 n^2} - \frac{k (k - c k - c n + 2 k n)}{2 n^2} \\
+& + \frac{k - c k - c n + 2 k n}{2 n} + 
+\frac{(n - k) (k - c k - c n + 2 k n)}{2 n^3} - \frac{c (n - k) (k - c k - c n + 2 k n)}{2 n^3}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\label{J21}
+J_{21} = \frac{k (n - k)}{n} 
+\end{equation}
+
+\begin{equation}
+\label{J22}
+\begin{split}
+J_{22} &= \frac{1}{2} - c + k - \frac{2 (n - k)}{n} + \frac{3 c (n - k)}{n} + \frac{2 k (k - n)}{n} \\ 
+ & + \frac{3 (n - k)^2}{2 n^2} - \frac{3 c (n-k)^2}{2 n^2} - \frac{k (k - c k - c n + 2 k n)}{2 n^2}
+\end{split}
+\end{equation}

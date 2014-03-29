@@ -1,0 +1,6 @@
+Shared among all files in dir	
+	Geometry of Lattice
+	Size of Lattice
+	What is the cutoff for assuming a population is dead
+	what is the maximum number of generations after which coexistence is assumed
+what are the parameter values

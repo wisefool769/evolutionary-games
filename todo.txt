@@ -1,9 +1,12 @@
-todo
-
-allow continuation from some point
-graphics for n-d sim
-have nlattice inherit directly from ndarray
-clustering
 
 
-determine appropriate size for simulation -- in progress
+
+Run Some 3D Sims on Dingli
+	Create a list of params to test for Dingli
+
+
+Create clustering metric
+	great! so beauty
+
+Decide on geometry, size
+	Let's do a 100^3 torus

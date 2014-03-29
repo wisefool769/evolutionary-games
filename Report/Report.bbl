@@ -1,0 +1,62 @@
+\begin{thebibliography}{10}
+
+\bibitem{Axelrod2006}
+Robert Axelrod, David~E. Axelrod, and Kenneth~J. Pienta.
+\newblock Evolution of cooperation among tumor cells.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  103(36):13474--13479, September 2006.
+
+\bibitem{Basanta2011}
+D.~Basanta, J.G. Scott, R.~Rockne, K.R. Swanson, and A.R.A. Anderson.
+\newblock The role of idh1 mutated tumour cells in secondary glioblastomas: an
+  evolutionary game theoretical view.
+\newblock {\em Physical Biology}, 8:015016, 2011.
+
+\bibitem{Basanta2008}
+D.~Basanta, M.~Simon, H.~Hatzikirou, and A.~Deutsch.
+\newblock Evolutionary game theory elucidates the role of glycolysis in glioma
+  progression and invasion.
+\newblock {\em Cell Proliferation}, 41(6):980--987, 2008.
+
+\bibitem{Dingli2009}
+D.~Dingli, FACC Chulab, F.C. Santos, S.~van Sedgebroeck, and J.M. Pacheco.
+\newblock Cancer phenotype as the outcome of an evolutionary game between
+  normal and malignant cells.
+\newblock {\em British Journal of Cancer}, 101:1130--1136, 2009.
+
+\bibitem{Durrett1994}
+R.~Durrett and S.~Levin.
+\newblock The importance of being discrete (and spatial).
+\newblock {\em Theoretical Population Biology}, 46(3):363 -- 394, 1994.
+
+\bibitem{Durrett2009}
+Rick Durrett.
+\newblock Coexistence in stochastic spatial models.
+\newblock {\em Annals of Applied Probability}, 22(3):477--496, 2009.
+
+\bibitem{Hofbauer1998}
+Josef Hofbauer and Karl Sigmund.
+\newblock {\em Evolutionary Games and Population Dynamics}.
+\newblock Cambridge University Press, Cambridge, 1998.
+
+\bibitem{Smith1986}
+J.M. Smith and G.R. Price.
+\newblock The logic of animal conflict.
+\newblock {\em Nature}, 246:15--18, November 1973.
+
+\bibitem{Tomlinson1997}
+I.P.M Tomlinson.
+\newblock Game-theory models of interactions between tumour cells.
+\newblock {\em European Journal of Cancer}, 33:1495--1500, 1997.
+
+\bibitem{TomBod}
+I.P.M Tomlinson and W.F. Bodmer.
+\newblock Modeling the interactions between tumor cells.
+\newblock {\em British Journal of Cancer}, 75:157--160, 1997.
+
+\bibitem{Watts1998}
+Duncan~J. Watts and Steven~H. Strogatz.
+\newblock Collective dynamics of /`small-world/' networks.
+\newblock {\em Nature}, 393(6684):440--442, 06 1998.
+
+\end{thebibliography}

@@ -1,0 +1,33 @@
+#!/usr/bin/env ipython
+
+# *** How to have the most comfort scripting experience of your life ***
+# ######################################################################
+#
+# … by using ipython for scripting combined with subcommands from bash!
+#
+# 1. echo "#!/usr/bin/env ipython3" > scriptname.ipy    # creates new ipy-file
+#
+# 2. chmod +x scriptname.ipy                            # make in executable
+#
+# 3. starting with line 2, write normal python or do some of
+#    the ! magic of ipython, so that you can use unix commands
+#    within python and even assign their output to a variable via
+#    var = !cmd1 | cmd2 | cmd3                          # enjoy ;)
+#
+# 4. run via ./scriptname.ipy - if it fails with recognizing % and !
+#    but parses raw python fine, please check again for the .ipy suffix
+
+# ugly example, please go and find more in the wild
+files = !ls *.* | grep "params.txt"
+print files
+for file in files:
+    readFile = open(file)
+    lines = readFile.readlines()
+    readFile.close()
+    w = open(file, 'w')
+    lines = lines[:-1]
+    lines.append("maxGen = 1e8 \n")
+    lines.append("geom = sphere \n")
+    w.writelines([item for item in lines])
+    w.close()
+# sorry for this nonsense example ;)
