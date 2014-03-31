@@ -1,0 +1,5 @@
+note ***
+
+after index 3: 
+	the number of things that need to fall below cutoff to stop sim was changed from 1 to 2
+	cutoff moved from 0.15 to 0.1

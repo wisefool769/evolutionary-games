@@ -10,7 +10,7 @@ study_name = 'dingli'
 dim = 50
 depth = 3
 max_age = 5 * 10 ** 6
-cutoff_frac = 0.15
+cutoff_frac = 0.1
 geom = "torus"
 
 cutoff = cutoff_frac * dim ** depth
@@ -62,7 +62,7 @@ for i,param in enumerate(params):
 	while not g.isFinished():
 		if g.age % 5e5 == 0:
 			print("gen: %d" % g.age)
-			if len(filter(lambda x: x < cutoff, g.count)) == 1:
+			if len(filter(lambda x: x < cutoff, g.count)) == 1: #two things close to dying
 				g.end()
 				break
 		g.update()

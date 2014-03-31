@@ -2,12 +2,11 @@ import csv
 from os import listdir
 from collections import deque
 
+def get_last_row(csv_filename):
+    with open(csv_filename, 'rb') as f:
+        return deque(csv.reader(f), 1)[0]
 
 def agg(data_dir, study_name):
-	def get_last_row(csv_filename):
-	    with open(csv_filename, 'rb') as f:
-	        return deque(csv.reader(f), 1)[0]
-
 	param_fname = study_name + '-params.csv'
 
 	stat_files = [f for f in listdir(data_dir) if f[-9:] == "stats.csv"]
