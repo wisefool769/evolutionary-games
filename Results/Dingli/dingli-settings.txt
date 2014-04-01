@@ -1,7 +1,7 @@
 
-		dim: 50
+		dim: 75
 		depth: 3 
-		max_age: 5e+06
+		max_age: 1e+07
 		cutoff: 0.100000
 		geom: torus
 		payoff: [[0,1,beta],[1, 0, -delta], [beta, 0, 0]]

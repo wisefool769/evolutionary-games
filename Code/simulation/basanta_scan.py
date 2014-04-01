@@ -7,9 +7,9 @@ from aggregate import agg, get_last_row
 result_dir = '../../Results/Basanta/'
 study_name = 'basanta'
 
-dim = 50
+dim = 75
 depth = 3
-max_age = 5 * 10 ** 6
+max_age = 2 * 10 ** 7
 cutoff_frac = 0.1
 geom = "torus"
 max_death = 2 #specific to game / parameter regime, most things we expect to coexist
@@ -51,18 +51,18 @@ for i,param in enumerate(params):
 	#ask to skip, and if so, what last row to fill in with
 	stat_fname = result_dir + study_name + '_' + str(i) + '-stats.csv'
 	#ask to skip, and if so, what last row to fill in with
-	pause = raw_input("skip n = %.2f, c = %.2f, k = %.2f ? (prev index is %d) " 
-		% (n,c,k, i - 1))
-	if pause != "n":
-		with open(result_dir + study_name + '-skips.csv', 'a') as skipfile:
-			skipfile.write(",".join([str(i), pause]) + '\n')
+	# pause = raw_input("skip n = %.2f, c = %.2f, k = %.2f ? (prev index is %d) " 
+	# 	% (n,c,k, i - 1))
+	# if pause != "n":
+	# 	with open(result_dir + study_name + '-skips.csv', 'a') as skipfile:
+	# 		skipfile.write(",".join([str(i), pause]) + '\n')
 
 		
-		prev_fname = result_dir + study_name + '_' + pause + '-stats.csv'
-		prev_row = ",".join(get_last_row(prev_fname)) + '\n'
-		with open(stat_fname, 'w') as stat_file:
-			stat_file.write(prev_row)
-		continue
+	# 	prev_fname = result_dir + study_name + '_' + pause + '-stats.csv'
+	# 	prev_row = ",".join(get_last_row(prev_fname)) + '\n'
+	# 	with open(stat_fname, 'w') as stat_file:
+	# 		stat_file.write(prev_row)
+	# 	continue
 	payoff = [[0,c/2,k-n],[1/2-c, 0, 1/2 + k - c], [n - k, c/2 - k, 0]]
 	print("setting up board %d ..." % i)
 	g = Game(

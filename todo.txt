@@ -1,7 +1,18 @@
+
+look up some good durrett math to put in
+
+
 Todo
-Test pause/skip code
+a) set up some basanta sims on large array
 
 
+figure out how to display frequency data as a random walk in R (on a simplex?!?!?!) <- fix this up!
+show appearance of coexistence in 3d <- look harder!!!!!!!!!
+put csv files somewhere more sensible
+put in more background!
+
+
+Put in the graphic from the poster 
 
 Make some parameter regime graphics
 	Make some parameter regime data

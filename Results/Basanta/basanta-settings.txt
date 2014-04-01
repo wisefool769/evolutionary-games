@@ -1,7 +1,7 @@
 
-		dim: 50
+		dim: 75
 		depth: 3 
-		max_age: 5e+06
+		max_age: 2e+07
 		cutoff: 0.100000
 		geom: torus
 		payoff: [[0,c/2,k-n],[1/2-c, 0, 1/2 + k - c], [n - k, c/2 - k, 0]]

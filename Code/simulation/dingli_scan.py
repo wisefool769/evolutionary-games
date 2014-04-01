@@ -7,9 +7,9 @@ from aggregate import agg
 result_dir = '../../Results/Dingli/'
 study_name = 'dingli'
 
-dim = 50
+dim = 75
 depth = 3
-max_age = 5 * 10 ** 6
+max_age =  10 ** 7
 cutoff_frac = 0.1
 geom = "torus"
 
