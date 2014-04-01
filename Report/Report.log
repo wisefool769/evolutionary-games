@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 APR 2014 01:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 APR 2014 13:49
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **Report.tex
 (./Report.tex
@@ -311,7 +312,37 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+
+LaTeX Warning: Citation `Dingli2009' on page 1 undefined on input line 25.
+
+
+LaTeX Warning: Citation `Basanta2008' on page 1 undefined on input line 25.
+
+
+LaTeX Warning: Citation `Smith1986' on page 1 undefined on input line 25.
+
+
+LaTeX Warning: Citation `Smith1986' on page 1 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Tomlinson1997' on page 1 undefined on input line 28.
+
+
+LaTeX Warning: Citation `TomBod' on page 1 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Axelrod2006' on page 1 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Basanta2008' on page 1 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Basanta2011' on page 1 undefined on input line 28.
+
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `Durrett1994' on page 2 undefined on input line 38.
+
 Package epstopdf Info: Source file: <Diagrams/General/themodel.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
 (epstopdf)                    size: 60550 bytes
@@ -321,7 +352,7 @@ Package epstopdf Info: Source file: <Diagrams/General/themodel.eps>
 (epstopdf)                    size: 4826 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/General/themodel-
 eps-converted-to.pdf Diagrams/General/themodel.eps>
-(epstopdf)             \includegraphics on input line 46.
+(epstopdf)             \includegraphics on input line 44.
 Package epstopdf Info: Output file is already uptodate.
 
 <Diagrams/General/themodel-eps-converted-to.pdf, id=16, 564.1075pt x 343.2825pt
@@ -329,38 +360,42 @@ Package epstopdf Info: Output file is already uptodate.
 File: Diagrams/General/themodel-eps-converted-to.pdf Graphic file (type pdf)
  <use Diagrams/General/themodel-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/General/themodel-eps-converted-to.pdf used on
- input line 46.
+ input line 44.
 (pdftex.def)             Requested size: 469.75502pt x 285.86723pt.
- [2 <./Diagrams/General/themodel-eps-converted-to.pdf>]
-<Diagrams/General/even_random_mix.png, id=23, 346.29375pt x 349.305pt>
+
+
+LaTeX Warning: Citation `Durrett1994' on page 2 undefined on input line 48.
+
+[2 <./Diagrams/General/themodel-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Cox2011' on page 3 undefined on input line 53.
+
+<Diagrams/General/even_random_mix.png, id=24, 346.29375pt x 349.305pt>
 File: Diagrams/General/even_random_mix.png Graphic file (type png)
 
 <use Diagrams/General/even_random_mix.png>
 Package pdftex.def Info: Diagrams/General/even_random_mix.png used on input lin
-e 58.
+e 61.
 (pdftex.def)             Requested size: 144.54pt x 145.801pt.
- [3 <./Diagrams/General/even_random_mix.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 107.
+ [3 <./Diagrams/General/even_random_mix.png (PNG copy)>] [4] [5]
+
+LaTeX Warning: Citation `Hofbauer1998' on page 6 undefined on input line 176.
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
+LaTeX Warning: Citation `Durrett2009' on page 6 undefined on input line 176.
 
-<Diagrams/Basanta/phase.jpg, id=28, 200.75pt x 180.675pt>
+<Diagrams/Basanta/phase.jpg, id=36, 200.75pt x 180.675pt>
 File: Diagrams/Basanta/phase.jpg Graphic file (type jpg)
 
 <use Diagrams/Basanta/phase.jpg>
-Package pdftex.def Info: Diagrams/Basanta/phase.jpg used on input line 119.
+Package pdftex.def Info: Diagrams/Basanta/phase.jpg used on input line 184.
 (pdftex.def)             Requested size: 169.10808pt x 152.20705pt.
 
-<Diagrams/Basanta/sample.png, id=30, 247.92625pt x 248.93pt>
+<Diagrams/Basanta/sample.png, id=38, 247.92625pt x 248.93pt>
 File: Diagrams/Basanta/sample.png Graphic file (type png)
 
 <use Diagrams/Basanta/sample.png>
-Package pdftex.def Info: Diagrams/Basanta/sample.png used on input line 124.
+Package pdftex.def Info: Diagrams/Basanta/sample.png used on input line 189.
 (pdftex.def)             Requested size: 169.10808pt x 169.79433pt.
 Package epstopdf Info: Source file: <Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_
 2_freqs".eps>
@@ -373,17 +408,17 @@ Package epstopdf Info: Source file: <Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/Basanta/"Basanta-
 c-0_3-n-0_5-k-0_2_freqs"-eps-converted-to.pdf Diagrams/Basanta/"Basanta-c-0_3-n
 -0_5-k-0_2_freqs".eps>
-(epstopdf)             \includegraphics on input line 129.
+(epstopdf)             \includegraphics on input line 194.
 Package epstopdf Info: Output file is already uptodate.
 
-<Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_2_freqs"-eps-converted-to.pdf, id=31
+<Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_2_freqs"-eps-converted-to.pdf, id=39
 , 361.35pt x 225.84375pt>
 File: Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_2_freqs"-eps-converted-to.pdf G
 raphic file (type pdf)
 
 <use Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_2_freqs"-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/Basanta/"Basanta-c-0_3-n-0_5-k-0_2_freqs"-eps
--converted-to.pdf used on input line 129.
+-converted-to.pdf used on input line 194.
 (pdftex.def)             Requested size: 169.10808pt x 105.69168pt.
 Package epstopdf Info: Source file: <Diagrams/Basanta/Basanta1_clustering.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
@@ -394,19 +429,36 @@ onverted-to.pdf>
 (epstopdf)                    size: 12777 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/Basanta/Basanta1_
 clustering-eps-converted-to.pdf Diagrams/Basanta/Basanta1_clustering.eps>
-(epstopdf)             \includegraphics on input line 134.
+(epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
 
-<Diagrams/Basanta/Basanta1_clustering-eps-converted-to.pdf, id=32, 361.35pt x 2
+<Diagrams/Basanta/Basanta1_clustering-eps-converted-to.pdf, id=40, 361.35pt x 2
 19.82124pt>
 File: Diagrams/Basanta/Basanta1_clustering-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use Diagrams/Basanta/Basanta1_clustering-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/Basanta/Basanta1_clustering-eps-converted-to.
-pdf used on input line 134.
+pdf used on input line 199.
 (pdftex.def)             Requested size: 169.10808pt x 102.87323pt.
 
-[4]
+<Diagrams/basanta_phase-cropped.pdf, id=41, 482.60814pt x 461.91406pt>
+File: Diagrams/basanta_phase-cropped.pdf Graphic file (type pdf)
+
+<use Diagrams/basanta_phase-cropped.pdf>
+Package pdftex.def Info: Diagrams/basanta_phase-cropped.pdf used on input line 
+212.
+(pdftex.def)             Requested size: 252.94499pt x 242.09972pt.
+
+
+LaTeX Warning: Citation `Dingli2009' on page 6 undefined on input line 218.
+
+
+LaTeX Warning: Citation `Dingli2009' on page 6 undefined on input line 218.
+
+
+LaTeX Warning: Citation `Hofbauer1998' on page 6 undefined on input line 234.
+
+[6]
 Package epstopdf Info: Source file: <Diagrams/Dingli/OCOB.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
 (epstopdf)                    size: 61697 bytes
@@ -416,18 +468,15 @@ Package epstopdf Info: Source file: <Diagrams/Dingli/OCOB.eps>
 (epstopdf)                    size: 23745 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/Dingli/OCOB-eps-c
 onverted-to.pdf Diagrams/Dingli/OCOB.eps>
-(epstopdf)             \includegraphics on input line 165.
+(epstopdf)             \includegraphics on input line 241.
 Package epstopdf Info: Output file is already uptodate.
- <Diagrams/Dingli/OCOB-eps-converted-to.pdf, id=37, 562.1pt x 421.575pt>
+ <Diagrams/Dingli/OCOB-eps-converted-to.pdf, id=46, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/OCOB-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Diagrams/Dingli/OCOB-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/Dingli/OCOB-eps-converted-to.pdf used on inpu
-t line 165.
-(pdftex.def)             Requested size: 108.405pt x 81.303pt.
- [5 <./Diagrams/Basanta/phase.jpg> <./Diagrams/Basanta/sample.png> <./Diagrams/
-Basanta/Basanta-c-0_3-n-0_5-k-0_2_freqs-eps-converted-to.pdf> <./Diagrams/Basan
-ta/Basanta1_clustering-eps-converted-to.pdf>]
+t line 241.
+(pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
 Package epstopdf Info: Source file: <Diagrams/Dingli/bistable.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
 (epstopdf)                    size: 61771 bytes
@@ -437,16 +486,16 @@ pdf>
 (epstopdf)                    size: 24248 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/Dingli/bistable-e
 ps-converted-to.pdf Diagrams/Dingli/bistable.eps>
-(epstopdf)             \includegraphics on input line 171.
+(epstopdf)             \includegraphics on input line 247.
 Package epstopdf Info: Output file is already uptodate.
 
-<Diagrams/Dingli/bistable-eps-converted-to.pdf, id=61, 562.1pt x 421.575pt>
+<Diagrams/Dingli/bistable-eps-converted-to.pdf, id=47, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/bistable-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Diagrams/Dingli/bistable-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/Dingli/bistable-eps-converted-to.pdf used on 
-input line 171.
-(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+input line 247.
+(pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
 Package epstopdf Info: Source file: <Diagrams/Dingli/OCMM.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
 (epstopdf)                    size: 61613 bytes
@@ -456,53 +505,80 @@ Package epstopdf Info: Source file: <Diagrams/Dingli/OCMM.eps>
 (epstopdf)                    size: 23608 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagrams/Dingli/OCMM-eps-c
 onverted-to.pdf Diagrams/Dingli/OCMM.eps>
-(epstopdf)             \includegraphics on input line 177.
+(epstopdf)             \includegraphics on input line 253.
 Package epstopdf Info: Output file is already uptodate.
 
-<Diagrams/Dingli/OCMM-eps-converted-to.pdf, id=62, 562.1pt x 421.575pt>
+<Diagrams/Dingli/OCMM-eps-converted-to.pdf, id=48, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/OCMM-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Diagrams/Dingli/OCMM-eps-converted-to.pdf>
 Package pdftex.def Info: Diagrams/Dingli/OCMM-eps-converted-to.pdf used on inpu
-t line 177.
-(pdftex.def)             Requested size: 108.405pt x 81.303pt.
+t line 253.
+(pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
+Package epstopdf Info: Source file: <Diagrams/dingli_phase-1.eps>
+(epstopdf)                    date: 2014-04-01 12:33:22
+(epstopdf)                    size: 385782 bytes
+(epstopdf)             Output file: <Diagrams/dingli_phase-1-eps-converted-to.p
+df>
+(epstopdf)                    date: 2014-04-01 12:43:16
+(epstopdf)                    size: 24428 bytes
+(epstopdf)             Command: <repstopdf --outfile=Diagrams/dingli_phase-1-ep
+s-converted-to.pdf Diagrams/dingli_phase-1.eps>
+(epstopdf)             \includegraphics on input line 262.
+Package epstopdf Info: Output file is already uptodate.
 
-Underfull \vbox (badness 2376) has occurred while \output is active []
+<Diagrams/dingli_phase-1-eps-converted-to.pdf, id=49, 505.89pt x 505.89pt>
+File: Diagrams/dingli_phase-1-eps-converted-to.pdf Graphic file (type pdf)
 
- [6 <./Diagrams/Dingli/OCOB-eps-converted-to.pdf> <./Diagrams/Dingli/bistable-e
-ps-converted-to.pdf> <./Diagrams/Dingli/OCMM-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use Diagrams/dingli_phase-1-eps-converted-to.pdf>
+Package pdftex.def Info: Diagrams/dingli_phase-1-eps-converted-to.pdf used on i
+nput line 262.
+(pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
- [7]
-(./Report.bbl) [8] (./Report.aux) ) 
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [7 <./Diagrams/Basanta/phase.jpg> <./Diagrams/Basanta/sample.png> <./Diagrams/
+Basanta/Basanta-c-0_3-n-0_5-k-0_2_freqs-eps-converted-to.pdf> <./Diagrams/Basan
+ta/Basanta1_clustering-eps-converted-to.pdf>] (./Report.bbl) [8 <./Diagrams/bas
+anta_phase-cropped.pdf>] [9 <./Diagrams/Dingli/OCOB-eps-converted-to.pdf> <./Di
+agrams/Dingli/bistable-eps-converted-to.pdf> <./Diagrams/Dingli/OCMM-eps-conver
+ted-to.pdf> <./Diagrams/dingli_phase-1-eps-converted-to.pdf>] (./Report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4354 strings out of 493315
- 64278 string characters out of 6137904
- 129623 words of memory out of 5000000
- 7567 multiletter control sequences out of 15000+600000
- 12806 words of font info for 49 fonts, out of 8000000 for 9000
+ 4353 strings out of 493315
+ 64450 string characters out of 6137904
+ 131571 words of memory out of 5000000
+ 7566 multiletter control sequences out of 15000+600000
+ 14054 words of font info for 54 fonts, out of 8000000 for 9000
  1118 hyphenation exceptions out of 8191
- 37i,9n,38p,1281b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti12.pfb>
-Output written on Report.pdf (8 pages, 311590 bytes).
+ 37i,9n,38p,1282b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Report.pdf (9 pages, 419505 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 168 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

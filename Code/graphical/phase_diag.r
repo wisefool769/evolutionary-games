@@ -7,10 +7,17 @@
 library(ggplot2)
 library(e1071)
 
-train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
+# myplotSVM <- e1071:::plot.svm
+# environment(myplotSVM)  <- .GlobalEnv
+# fix(myplotSVM)
+
+
+
+# train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
+train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
 freq_names <- c('Type.1', 'Type.2', 'Type.3')
-# plot.vars <- c('Beta', 'Delta', 'Coexistence')
-plot.vars <- c('n', 'c', 'Coexistence')
+plot.vars <- c('Beta', 'Delta', 'Coexistence')
+# plot.vars <- c('n', 'c', 'Coexistence')
 
 #legend
 #clusters 1, 2, 3, 12, 13, 23, 123
@@ -56,30 +63,25 @@ train$Coexistence <-
 			freqs.to.class(train[x,freq_names])))
 
 
-# svm.model <- svm(Coexistence ~ Beta + Delta, data = train)
-svm.model <- svm(Coexistence ~ n + c, data = train)
 
-setEPS()
-postscript("basanta_phase-1.eps")
-plot(svm.model, train[,plot.vars])
+
+train <- train[train$Beta<=5 & train$Delta <= 5,]
+svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
+
+postscript("../../Report/Diagrams/dingli_phase-1.eps")
+plot(svm.model, train[,plot.vars],)
 dev.off()
 
-# ids <- factor(c("1.1", "2.1", "1.2", "2.2", "1.3", "2.3"))
+# train <- train[train$c <= 1 & train$n <= 1,]
+# svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "polynomial", cost = 1000)
 
-# values <- data.frame(
-#   id = ids,
-#   value = c("yellow", "blue", "red")
-# )
 
-# positions <- data.frame(
-#   id = rep(ids, each = 4),
-#   x = c(2, 1, 1.1, 2.2, 1, 0, 0.3, 1.1, 2.2, 1.1, 1.2, 2.5, 1.1, 0.3,
-#   0.5, 1.2, 2.5, 1.2, 1.3, 2.7, 1.2, 0.5, 0.6, 1.3),
-#   y = c(-0.5, 0, 1, 0.5, 0, 0.5, 1.5, 1, 0.5, 1, 2.1, 1.7, 1, 1.5,
-#   2.2, 2.1, 1.7, 2.1, 3.2, 2.8, 2.1, 2.2, 3.3, 3.2)
-# )
+# postscript("../../Report/Diagrams/basanta_phase-1.eps")
+# plot(svm.model, train[,plot.vars], 
+# 	col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
+# 	)
+# dev.off()
 
-# # Currently we need to manually merge the two together
-# datapoly <- merge(values, positions, by=c("id"))
-# p <- ggplot(datapoly, aes(x=x, y=y)) + geom_polygon(aes(fill=value, group=id))
-# plot(p)
+
+
+

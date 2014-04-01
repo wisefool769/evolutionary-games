@@ -1,5 +1,14 @@
+TODO
+insert all diagrams
+talk in conclusion
+fix citations
+make some frequency plots
+ignore certain points in plot
 
-look up some good durrett math to put in
+Other things: 
+	2 D parameter sweep?
+
+
 
 
 Todo

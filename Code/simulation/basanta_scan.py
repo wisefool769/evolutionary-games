@@ -31,6 +31,7 @@ with open(result_dir + study_name +'-settings.txt', 'w') as summary_file:
 param_file = open(result_dir + study_name + '-params.csv', 'rU')
 reader = csv.reader(param_file)
 params = [row for row in reader][1:] #read from this csv
+
 params = map(lambda row: map(float, row), params) #convert strings to floats
 
 result_files = [f for f in listdir(result_dir) if f[-9:] == 'stats.csv']
