@@ -47,7 +47,7 @@ for i,param in enumerate(params):
 	if i in result_indices:
 		continue
 
-	[e, f, h, k] = param
+	[e, g, f, h] = param
 
 	#ask to skip, and if so, what last row to fill in with
 	stat_fname = result_dir + study_name + '_' + str(i) + '-stats.csv'
@@ -64,14 +64,14 @@ for i,param in enumerate(params):
 	# 	with open(stat_fname, 'w') as stat_file:
 	# 		stat_file.write(prev_row)
 	# 	continue
-	g = k + e
+
 	payoff = [                         #all params positive, in [0,1]
 	[0 , h - e, g - e],                    
 	[f + e - g - h, 0 , -h],
 	[e - g, h, 0]
 	]
 
-	print("setting up board %d (e, f, g, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, f, g, h))
+	print("setting up board %d (e, g, f, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, g, f, h))
 	sim = Game(
 		payoff,
 		depth,
