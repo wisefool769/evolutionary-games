@@ -13,11 +13,11 @@ library(e1071)
 
 
 
-# train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
-train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
+train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
+# train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
 freq_names <- c('Type.1', 'Type.2', 'Type.3')
-plot.vars <- c('Beta', 'Delta', 'Coexistence')
-# plot.vars <- c('n', 'c', 'Coexistence')
+# plot.vars <- c('Beta', 'Delta', 'Coexistence')
+plot.vars <- c('n', 'c', 'Coexistence')
 
 #legend
 #clusters 1, 2, 3, 12, 13, 23, 123
@@ -65,22 +65,22 @@ train$Coexistence <-
 
 
 
-train <- train[train$Beta<=5 & train$Delta <= 5,]
-svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
+# train <- train[train$Beta<=5 & train$Delta <= 5,]
+# svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
 
-postscript("../../Report/Diagrams/dingli_phase-1.eps")
-plot(svm.model, train[,plot.vars],)
-dev.off()
-
-# train <- train[train$c <= 1 & train$n <= 1,]
-# svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "polynomial", cost = 1000)
-
-
-# postscript("../../Report/Diagrams/basanta_phase-1.eps")
-# plot(svm.model, train[,plot.vars], 
-# 	col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
-# 	)
+# postscript("../../Report/Diagrams/dingli_phase-1.eps")
+# plot(svm.model, train[,plot.vars],)
 # dev.off()
+
+train <- train[train$c <= 1 & train$n <= 1,]
+svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "linear", cost = 10000)
+
+
+postscript("../../Report/Diagrams/basanta_phase-1.eps")
+plot(svm.model, train[,plot.vars], 
+	col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
+	)
+dev.off()
 
 
 

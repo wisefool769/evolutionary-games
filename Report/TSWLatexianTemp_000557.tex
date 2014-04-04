@@ -5,7 +5,6 @@
 \usepackage{amsmath}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{float}
 
@@ -183,7 +182,6 @@ Using this information, we have the replicator behavior in different parameter r
 
 
 \begin{figure}[H]
-\centering
 \textbf{Phase Diagram for $k = 0.5$}
 \includegraphics[width = 0.9 \linewidth]{Diagrams/basanta_phase-cropped}
 \caption{Parameter regimes in spatial Glioblastoma game for $k = 0.5$. The numbers 1, 2, and 3 correspond to AG, INV, and GLY respectively. Multiple numbers indicate coexistence}
@@ -272,64 +270,13 @@ In the spatial case, things look different, mainly because of the absence of bi-
 \caption{Parameter regimes in spatial Myeloma Game. The numbers 1, 2, and 3 correspond to OC, OB, and MM respectively. Two numbers together indicate coexistence}
 \end{figure}
 
-\section*{Toxin Game}
-Tomlinson and Bodmer \cite{TomBod}1 consider the following example, where one cell produces a toxin that harms other tumor cells -- receiving a payoff. 
-
-We have three types of cells
-\begin{enumerate}
-\item Producers (P) secrete a toxin
-\item Resistant (R) cells to the above toxin
-\item Baseline (B) cells neither produce nor resist the toxin
-\end{enumerate}
-
-We have the following interaction terms. All terms are assumed to be positive.
-\begin{itemize}
-\item $z$ : Baseline fitness
-\item $e$ : Cost of producing toxin
-\item $g$ :  Payoff of poisoning another cell. We have $g > e$, as the toxin would otherwise not be produced.
-\item $h$ :  Cost of resisting the toxin
-\item $f$ : Effect of toxin on non-resistant cells
-\end{itemize}
-
-
-We have the payoff matrix, 
-
-$$A = \bordermatrix{\text{}& P & R & B\cr
-                P & z - e - f + g & z - e & z - e + g \cr
-                R & z - h  &  z - h & z - h \cr
-                B & z - f & z & z \cr
-               }$$
-
-We add constants to each column to set the diagonals to 0. Also, introduce $k = g - e > 0$, the fitness advantage of producing toxin net of costs. Then, we have the reduced matrix
-
-
-$$ A = \begin{pmatrix}
-0 & h - e& k \\
-f - k - h & 0 & -h \\
-- k & h & 0
-\end{pmatrix} $$
-
-As before, we can consider the pairwise interaction of each cell pair. \\
-
-\textbf{1. R vs. B} B dominates R since $h > 0$ \\
-
-\textbf{2. P vs. B} P dominates B since $k > 0$ \\
-
-\textbf{3. P vs. R} If $e > h$ and $f < k + h$, then we have P dominating R.
-If $f > k + h$ and $ e > h$, then we have R dominates P. Otherwise, we have an equilibrium at 
-$$p_{P} = \frac{h - e}{f - k - e} = \frac{h - e}{f - g}$$
-$$p_{R} = \frac{f - k - h}{f - k - e}  = \frac{f - k - h}{f - g}$$ 
-
-The equilibrium is stable if the off-diagonal terms are positive, giving $e < h$ and $f > k + h$. 
-
-Now, we check if B can invade the P-R equilibrium. This condition is
 
 
 
 \chapter*{Conclusion}
 We have created a stochastic spatial model for a generic evolutionary game and applied it to the interplay of phenotypes in tumor growth. The interacting particle system retains many of the important dynamical features of the mean-field approximation, including certain critical phase transition values. The spatial structure encouraged coexistence in one game with a stable fixed point, making it possible for a wider range of parameters. In bi-stable systems, we can observe a phase transition that depends on the parameters, in lieu of actual bi-stability. Tumors are famously heterogeneous, with multiple cell types in complex spatial arrangements. \\
 
-Spatial considerations can change the qualitative features of an evolutionary game, explaining this coexistence better than a simpler mean-field approach. A game-theoretic approach could offer clinical insights into the relationship between cancerous phenotypes. Targeting specific phenotypes can have counterintuitive effects on the tumor as a whole. New methods of treatment could attempt to change the parameters of this evolutionary game, enabling the tumor to select malignant phenotypes out on its own.\\
+Spatial considerations can change the qualitative features of an evolutionary game, explaining this coexistence better than a simpler mean-field approach. A game-theoretic approach could offer clinical insights into the relationship between cancerous phenotypes. Targeting specific phenotypes can have counterintuitive effects on the tumor as a whole. New methods of treatment could attempt to change the parameters of this evolutionary game, enabling the tumor to select malignant phenotypes out on its own.
 
 For future work, it would be interesting to look at the mean-field ODE more closely, specifically the Eigenvalues and Eigenvectors of the given fixed points. It is possible that this could shed light on time-evolution of the spatial game. One might also look more closely at the analytical results for 2-strategy games, to see if an updated game matrix can accurately predict equilibrium frequencies in the full spatial model. 
 

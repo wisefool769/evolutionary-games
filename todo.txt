@@ -1,9 +1,6 @@
 TODO
-insert all diagrams
-talk in conclusion
-fix citations
-make some frequency plots
-ignore certain points in plot
+FIX ALL THE GRAPHS TO BE IN THE RIGHT PLACE AT THE RIGHT TIME
+
 
 Other things: 
 	2 D parameter sweep?
