@@ -4,6 +4,7 @@ from nlattice import normalize
 from os import listdir
 from aggregate import agg, get_last_row
 
+print("please print this to the log")
 result_dir = '../../Results/tm2/'
 study_name = 'tm2'
 
