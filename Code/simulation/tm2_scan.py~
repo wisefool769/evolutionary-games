@@ -4,12 +4,8 @@ from nlattice import normalize
 from os import listdir
 from aggregate import agg, get_last_row
 
-<<<<<<< HEAD
-=======
-print("please print this to the log")
->>>>>>> 630b9ef206c23d9a3abfed6981dd907a3e59228a
-result_dir = '../../Results/tm2/'
-study_name = 'tm2'
+result_dir = '../../Results/Tomlinson/'
+study_name = 'tm'
 
 dim = 75
 depth = 3
@@ -51,7 +47,7 @@ for i,param in enumerate(params):
 	if i in result_indices:
 		continue
 
-	[e, g, f, h] = param
+	[e, f, h, k] = param
 
 	#ask to skip, and if so, what last row to fill in with
 	stat_fname = result_dir + study_name + '_' + str(i) + '-stats.csv'
@@ -68,18 +64,14 @@ for i,param in enumerate(params):
 	# 	with open(stat_fname, 'w') as stat_file:
 	# 		stat_file.write(prev_row)
 	# 	continue
-
+	g = k + e
 	payoff = [                         #all params positive, in [0,1]
 	[0 , h - e, g - e],                    
 	[f + e - g - h, 0 , -h],
 	[e - g, h, 0]
 	]
 
-<<<<<<< HEAD
 	print("setting up board %d (e, f, g, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, f, g, h))
-=======
-	print("setting up board %d (e, g, f, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, g, f, h))
->>>>>>> 630b9ef206c23d9a3abfed6981dd907a3e59228a
 	sim = Game(
 		payoff,
 		depth,

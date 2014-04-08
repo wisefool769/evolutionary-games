@@ -19,6 +19,9 @@ def choose(v):		#choose an item given vector of probabilities
 			r -= val
 	return (len(v) - 1)
 
+def count_nonzero(M):
+	return sum(1 for i in M.flatten().tolist() if i)
+
 def narray(func, d, dim): #initialize d-dimensional array with lengths dim
 	if d == 1:
 		return map(func, [i for i in range(dim)])
