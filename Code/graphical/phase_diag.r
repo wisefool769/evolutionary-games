@@ -73,9 +73,9 @@ train$Coexistence <-
 train <- train[train$Beta<=5 & train$Delta <= 5,]
 svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
 
-png("../../Report/Diagrams/dingli_phase-1.png")
-plot(svm.model, train[,plot.vars],)
-dev.off()
+# png("../../Report/Diagrams/dingli_phase-1.png")
+plot(svm.model, train[,plot.vars], dataSymbol = 2)
+# dev.off()
 
 
 ## train <- train[train$c <= 1 & train$n <= 1,]
