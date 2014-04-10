@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 APR 2014 22:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 APR 2014 00:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/aashiq/Dropbox/Duke/evolutionary-games/Report/TSWLatexianTemp_000001.tex
-(/Users/aashiq/Dropbox/Duke/evolutionary-games/Report/TSWLatexianTemp_000001.tex
+**/Users/aashiq/Dropbox/Duke/evolutionary-games/Report/TSWLatexianTemp_000289.tex
+(/Users/aashiq/Dropbox/Duke/evolutionary-games/Report/TSWLatexianTemp_000289.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/report.cls
@@ -167,8 +167,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box29
 )
-No file TSWLatexianTemp_000001.aux.
-\openout1 = `TSWLatexianTemp_000001.aux'.
+No file TSWLatexianTemp_000289.aux.
+\openout1 = `TSWLatexianTemp_000289.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -378,44 +378,48 @@ Package pdftex.def Info: Diagrams/General/even_random_mix.png used on input line
 (pdftex.def)             Requested size: 144.54pt x 145.801pt.
  [6 <./Diagrams/General/even_random_mix.png (PNG copy)>] [7
 
-] [8]
+] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
-LaTeX Warning: Citation `Hofbauer1998' on page 9 undefined on input line 199.
+ []
 
 
-LaTeX Warning: Citation `Durrett1994' on page 9 undefined on input line 199.
+LaTeX Warning: Citation `Hofbauer1998' on page 10 undefined on input line 237.
 
-<Diagrams/basanta_phase-cropped.png, id=46, 458.71375pt x 427.5975pt>
+
+LaTeX Warning: Citation `Durrett1994' on page 10 undefined on input line 237.
+
+<Diagrams/basanta_phase-cropped.png, id=49, 458.71375pt x 427.5975pt>
 File: Diagrams/basanta_phase-cropped.png Graphic file (type png)
  <use Diagrams/basanta_phase-cropped.png>
-Package pdftex.def Info: Diagrams/basanta_phase-cropped.png used on input line 205.
+Package pdftex.def Info: Diagrams/basanta_phase-cropped.png used on input line 243.
 (pdftex.def)             Requested size: 422.77664pt x 394.1187pt.
- [9] <Diagrams/Basanta/sample.png, id=52, 247.92625pt x 248.93pt>
+ [10] <Diagrams/Basanta/sample.png, id=55, 247.92625pt x 248.93pt>
 File: Diagrams/Basanta/sample.png Graphic file (type png)
  <use Diagrams/Basanta/sample.png>
-Package pdftex.def Info: Diagrams/Basanta/sample.png used on input line 212.
+Package pdftex.def Info: Diagrams/Basanta/sample.png used on input line 250.
 (pdftex.def)             Requested size: 169.10808pt x 169.79433pt.
- <Diagrams/basanta_trajectories.pdf, id=53, 289.08pt x 289.08pt>
+ <Diagrams/basanta_trajectories.pdf, id=56, 289.08pt x 289.08pt>
 File: Diagrams/basanta_trajectories.pdf Graphic file (type pdf)
  <use Diagrams/basanta_trajectories.pdf>
-Package pdftex.def Info: Diagrams/basanta_trajectories.pdf used on input line 217.
+Package pdftex.def Info: Diagrams/basanta_trajectories.pdf used on input line 255.
 (pdftex.def)             Requested size: 169.10808pt x 169.10449pt.
- [10 <./Diagrams/basanta_phase-cropped.png>]
+ [11 <./Diagrams/basanta_phase-cropped.png>]
 
-LaTeX Warning: Citation `Durrett2009' on page 11 undefined on input line 229.
-
-
-LaTeX Warning: Citation `Dingli2009' on page 11 undefined on input line 234.
+LaTeX Warning: Citation `Durrett2009' on page 12 undefined on input line 267.
 
 
-LaTeX Warning: Citation `Dingli2009' on page 11 undefined on input line 234.
-
-[11 <./Diagrams/Basanta/sample.png> <./Diagrams/basanta_trajectories.pdf>]
-
-LaTeX Warning: Citation `Hofbauer1998' on page 12 undefined on input line 250.
+LaTeX Warning: Citation `Dingli2009' on page 12 undefined on input line 272.
 
 
-Overfull \hbox (0.88187pt too wide) in paragraph at lines 242--251
+LaTeX Warning: Citation `Dingli2009' on page 12 undefined on input line 272.
+
+[12 <./Diagrams/Basanta/sample.png> <./Diagrams/basanta_trajectories.pdf>]
+
+LaTeX Warning: Citation `Hofbauer1998' on page 13 undefined on input line 288.
+
+
+Overfull \hbox (0.88187pt too wide) in paragraph at lines 280--289
 []$\OT1/cmr/m/n/12 . The pro-jec-tive trans-for-ma-tion moves any in-ter-nal fixed point into the barycen-
  []
 
@@ -426,12 +430,12 @@ Package epstopdf Info: Source file: <Diagrams/Dingli/OCOB.eps>
 (epstopdf)                    date: 2014-04-01 01:32:34
 (epstopdf)                    size: 23745 bytes
 (epstopdf)             Command: <epstopdf --outfile=Diagrams/Dingli/OCOB-eps-converted-to.pdf Diagrams/Dingli/OCOB.eps>
-(epstopdf)             \includegraphics on input line 258.
+(epstopdf)             \includegraphics on input line 296.
 Package epstopdf Info: Output file is already uptodate.
-<Diagrams/Dingli/OCOB-eps-converted-to.pdf, id=73, 562.1pt x 421.575pt>
+<Diagrams/Dingli/OCOB-eps-converted-to.pdf, id=77, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/OCOB-eps-converted-to.pdf Graphic file (type pdf)
  <use Diagrams/Dingli/OCOB-eps-converted-to.pdf>
-Package pdftex.def Info: Diagrams/Dingli/OCOB-eps-converted-to.pdf used on input line 258.
+Package pdftex.def Info: Diagrams/Dingli/OCOB-eps-converted-to.pdf used on input line 296.
 (pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
 Package epstopdf Info: Source file: <Diagrams/Dingli/bistable.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
@@ -440,12 +444,12 @@ Package epstopdf Info: Source file: <Diagrams/Dingli/bistable.eps>
 (epstopdf)                    date: 2014-04-01 01:32:35
 (epstopdf)                    size: 24248 bytes
 (epstopdf)             Command: <epstopdf --outfile=Diagrams/Dingli/bistable-eps-converted-to.pdf Diagrams/Dingli/bistable.eps>
-(epstopdf)             \includegraphics on input line 264.
+(epstopdf)             \includegraphics on input line 302.
 Package epstopdf Info: Output file is already uptodate.
- <Diagrams/Dingli/bistable-eps-converted-to.pdf, id=74, 562.1pt x 421.575pt>
+ <Diagrams/Dingli/bistable-eps-converted-to.pdf, id=78, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/bistable-eps-converted-to.pdf Graphic file (type pdf)
  <use Diagrams/Dingli/bistable-eps-converted-to.pdf>
-Package pdftex.def Info: Diagrams/Dingli/bistable-eps-converted-to.pdf used on input line 264.
+Package pdftex.def Info: Diagrams/Dingli/bistable-eps-converted-to.pdf used on input line 302.
 (pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
 Package epstopdf Info: Source file: <Diagrams/Dingli/OCMM.eps>
 (epstopdf)                    date: 2014-03-28 17:57:50
@@ -454,63 +458,63 @@ Package epstopdf Info: Source file: <Diagrams/Dingli/OCMM.eps>
 (epstopdf)                    date: 2014-04-01 01:32:36
 (epstopdf)                    size: 23608 bytes
 (epstopdf)             Command: <epstopdf --outfile=Diagrams/Dingli/OCMM-eps-converted-to.pdf Diagrams/Dingli/OCMM.eps>
-(epstopdf)             \includegraphics on input line 270.
+(epstopdf)             \includegraphics on input line 308.
 Package epstopdf Info: Output file is already uptodate.
- <Diagrams/Dingli/OCMM-eps-converted-to.pdf, id=75, 562.1pt x 421.575pt>
+ <Diagrams/Dingli/OCMM-eps-converted-to.pdf, id=79, 562.1pt x 421.575pt>
 File: Diagrams/Dingli/OCMM-eps-converted-to.pdf Graphic file (type pdf)
  <use Diagrams/Dingli/OCMM-eps-converted-to.pdf>
-Package pdftex.def Info: Diagrams/Dingli/OCMM-eps-converted-to.pdf used on input line 270.
+Package pdftex.def Info: Diagrams/Dingli/OCMM-eps-converted-to.pdf used on input line 308.
 (pdftex.def)             Requested size: 169.10808pt x 126.82727pt.
- <Diagrams/dingli_trajectories.pdf, id=76, 289.08pt x 289.08pt>
+ <Diagrams/dingli_trajectories.pdf, id=80, 289.08pt x 289.08pt>
 File: Diagrams/dingli_trajectories.pdf Graphic file (type pdf)
  <use Diagrams/dingli_trajectories.pdf>
-Package pdftex.def Info: Diagrams/dingli_trajectories.pdf used on input line 278.
+Package pdftex.def Info: Diagrams/dingli_trajectories.pdf used on input line 316.
 (pdftex.def)             Requested size: 187.89914pt x 187.89977pt.
- [12] [13 <./Diagrams/Dingli/OCOB-eps-converted-to.pdf> <./Diagrams/Dingli/bistable-eps-converted-to.pdf> <./Diagrams/Dingli/OCMM-eps-converted-to.pdf> <./Diagrams/dingli_trajectories.pdf>] <Diagrams/dingli_phase-cropped.png, id=103, 470.75874pt x 434.62375pt>
+ [13] [14 <./Diagrams/Dingli/OCOB-eps-converted-to.pdf> <./Diagrams/Dingli/bistable-eps-converted-to.pdf> <./Diagrams/Dingli/OCMM-eps-converted-to.pdf> <./Diagrams/dingli_trajectories.pdf>] <Diagrams/dingli_phase-cropped.png, id=106, 470.75874pt x 434.62375pt>
 File: Diagrams/dingli_phase-cropped.png Graphic file (type png)
  <use Diagrams/dingli_phase-cropped.png>
-Package pdftex.def Info: Diagrams/dingli_phase-cropped.png used on input line 288.
+Package pdftex.def Info: Diagrams/dingli_phase-cropped.png used on input line 326.
 (pdftex.def)             Requested size: 375.80544pt x 346.96333pt.
 
 
-LaTeX Warning: Citation `TomBod' on page 14 undefined on input line 293.
+LaTeX Warning: Citation `TomBod' on page 15 undefined on input line 331.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 304.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 342.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 304.
- [14 <./Diagrams/dingli_phase-cropped.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 342.
+ [15 <./Diagrams/dingli_phase-cropped.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-[17
+[18
 
 ]
-No file TSWLatexianTemp_000001.bbl.
-(./TSWLatexianTemp_000001.aux)
+No file TSWLatexianTemp_000289.bbl.
+(./TSWLatexianTemp_000289.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -524,10 +528,10 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  37i,9n,38p,1377b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on TSWLatexianTemp_000001.pdf (18 pages, 2376504 bytes).
+Output written on TSWLatexianTemp_000289.pdf (19 pages, 2379249 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 170 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
