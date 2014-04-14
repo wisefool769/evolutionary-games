@@ -54,9 +54,15 @@ freqs.to.class <- function(freqs){
 #train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
 #plot.vars <- c('n', 'c', 'Coexistence')
 
-train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
-plot.vars <- c('Beta', 'Delta', 'Coexistence')
+# train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
+# plot.vars <- c('Beta', 'Delta', 'Coexistence')
 
+# train <- data.frame(read.csv("../../Results/tm2/tm2_param-scan.csv", header=TRUE))
+# plot.vars <- c('f', 'h', 'Coexistence')
+
+train <- data.frame(read.csv("../../Results/b2/b2_param-scan.csv",
+header=TRUE)) 
+plot.vars <- c('k', 'n', 'Coexistence')
 
 
 num.pts <- dim(train)[1]
@@ -69,25 +75,25 @@ train$Coexistence <-
 
 
 
+# Dingli
+# train <- train[train$Beta<=5 & train$Delta <= 5 & train$Coexistence != 123,]
+# train$Coexistence <- droplevels(train$Coexistence)
+# svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
+# plot(svm.model, train[,plot.vars])
 
-train <- train[train$Beta<=5 & train$Delta <= 5,]
-svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
-
-# png("../../Report/Diagrams/dingli_phase-1.png")
-plot(svm.model, train[,plot.vars], dataSymbol = 2)
-# dev.off()
 
 
 ## train <- train[train$c <= 1 & train$n <= 1,]
 ## svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "linear", cost = 10000)
-
-
-## png("../../Report/Diagrams/basanta_phase-1.png")
 ## plot(svm.model, train[,plot.vars], 
 ## 	col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
 ## 	)
-## dev.off()
 
 
+train <- train[train$c <= 1 & train$n <= 1,]
+svm.model <- svm(Coexistence ~ k + n, data = train, kernel = "linear", cost = 10000)
+plot(svm.model, train[,plot.vars], col = c("yellow", "blue", "pink", "green"))
 
+# svm.model <- svm(Coexistence ~ h + f, data = train, kernel = "linear", cost = 10000)
+# plot(svm.model, train[,plot.vars], col = c("blue", "yellow", "green"))
 

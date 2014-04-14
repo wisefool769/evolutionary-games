@@ -1,3 +1,11 @@
-make phase plots for dingli, basanta, toxin game
-fix x's and o's on existing latex plots
-check out what simulation said for toxin game
+Todo
+commit to git
+Put in results from new simulation and do more sims if needed
+look over email and make more changes
+make some simplex type graphics
+replace basanta result with nicer graph after sims run
+Proofread
+
+Fix explanation of projective transformation
+Make a new Dingli graph without 123
+Put in new graphs

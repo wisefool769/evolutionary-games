@@ -4,10 +4,9 @@ from nlattice import normalize
 from os import listdir
 from aggregate import agg, get_last_row
 
-<<<<<<< HEAD
-=======
+
+
 print("please print this to the log")
->>>>>>> 630b9ef206c23d9a3abfed6981dd907a3e59228a
 result_dir = '../../Results/tm2/'
 study_name = 'tm2'
 
@@ -75,11 +74,7 @@ for i,param in enumerate(params):
 	[e - g, h, 0]
 	]
 
-<<<<<<< HEAD
-	print("setting up board %d (e, f, g, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, f, g, h))
-=======
 	print("setting up board %d (e, g, f, h) = (%.2f, %.2f, %.2f, %.2f)..." % (i, e, g, f, h))
->>>>>>> 630b9ef206c23d9a3abfed6981dd907a3e59228a
 	sim = Game(
 		payoff,
 		depth,

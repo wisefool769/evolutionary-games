@@ -19,6 +19,50 @@
 # plot(q)
 
 
+### Phase Diagram for Toxin Game
+# ids <- factor(c("P", "P-R" , "Interior", "Cyclic"))
+#               
+# # ids <- factor(c("1.1", "2.1", "1.2", "2.2", "1.3", "2.3"))
+# 
+# values <- data.frame(
+#   id = ids,
+#   value = ids
+# )
+
+# rep.times <- c(5,3,3,4)
+# poly.1.x <- c(0,0,1,1, g - e)
+# poly.1.y <- c(0,1,1, 1 + e - g, 0)
+# poly.2.x <- c(g, 1, 1)
+# poly.2.y <- c(e, 1 + e - g, e/g)
+# poly.3.x <- c(g, 1, 1)
+# poly.3.y <- c(e, e/g, e)
+# poly.4.x <- c(g - e, g, 1, 1)
+# poly.4.y <- c(0,e,e,0)
+#               
+# positions <- data.frame(
+#   id = rep(ids, rep.times),
+#   x = c(poly.1.x, poly.2.x, poly.3.x, poly.4.x),
+#   y = c(poly.1.y, poly.2.y, poly.3.y, poly.4.y)
+# )
+# 
+# 
+# # Currently we need to manually merge the two together
+# datapoly <- merge(values, positions, by=c("id"))
+# p <- ggplot(datapoly, aes(x=x, y=y)) +
+#   geom_polygon(aes(fill=value, group=id)) + 
+#   xlab('f') + 
+#   ylab('h') + 
+#   ggtitle('Toxin Mean-Field Phase Diagram') + 
+#   scale_fill_discrete(name = "Equilibrium") + 
+#   theme(panel.grid.major=element_blank(),
+#     panel.grid.minor=element_blank(),
+#     plot.background=element_blank(),
+#     panel.background=element_blank(),
+#     panel.border=element_blank()
+#     )
+# 
+# plot(p)
+
 # ## Plots functions for Basanta Game
 # k <- 0.5
 # 
@@ -60,57 +104,57 @@
 # plot(q)
 
 ### Basanta Ribbons holding c constant > 1/2
-c <- 0.6
-f1 <- function(x){ #invadability of IG
-  return(c * x / (1 - c + 2 * x))
-}
-
-f2 <- function(x){ # positivity of int. fixed point, useless here
-  return(c / (1- c) * x)
-}
-
-f3 <- function(x){
-  return(x)
-}
-
-
-
-
-xvals = seq(0,1,0.001)
-crvs <- data.frame(x = xvals,
-                   y1 = f1(xvals),
-                   y3 = f3(xvals))
-
-
-
-q <- ggplot(crvs, aes(x = x)) + 
-  xlim(0,1) + 
-  ylim(0,1) + 
-  xlab('n') + 
-  ylab('k') + 
-  geom_ribbon(aes(ymin = y3, ymax = 1, fill = 'AG')) + 
-  geom_ribbon(aes(ymin = ifelse(xvals > c/2, c/2, 0),
-                  ymax = ifelse(y3 > c/2, y3, 0),
-                  fill = 'Cyclic')) + 
-  geom_ribbon(aes(ymin = ifelse(xvals > c - 1/2, f1(xvals), 0),
-                  ymax = ifelse(xvals > c - 1/2, pmin(xvals, c/2), 0),
-                  fill = 'AG-INV-GLY')) + 
-  geom_ribbon(aes(ymin = ifelse(xvals > c - 1/2, c - 1/2, 0),
-                  ymax = ifelse(xvals > c - 1/2, f1(xvals), 0),
-                  fill = 'INV-GLY')) +
- geom_ribbon(aes(ymin = 0, 
-                 ymax = pmin(y3, rep(c - 1/2, length(y3))), fill = "GLY") ) + 
-  
-#   geom_ribbon(aes(ymin = y2, ymax = 1, fill = 'AG-INV')) + 
-    scale_fill_discrete(name = "Equilibrium")+
-    theme(panel.grid.major=element_blank(),
-      panel.grid.minor=element_blank(),
-      plot.background=element_blank(),
-      panel.background=element_blank(),
-      panel.border=element_blank()
-      ) + 
-  ggtitle(paste('Glycolytic Mean-Field Phase Diagram for c =', toString(c)))
-plot(q)
+# c <- 0.6
+# f1 <- function(x){ #invadability of IG
+#   return(c * x / (1 - c + 2 * x))
+# }
+# 
+# f2 <- function(x){ # positivity of int. fixed point, useless here
+#   return(c / (1- c) * x)
+# }
+# 
+# f3 <- function(x){
+#   return(x)
+# }
+# 
+# 
+# 
+# 
+# xvals = seq(0,1,0.001)
+# crvs <- data.frame(x = xvals,
+#                    y1 = f1(xvals),
+#                    y3 = f3(xvals))
+# 
+# 
+# 
+# q <- ggplot(crvs, aes(x = x)) + 
+#   xlim(0,1) + 
+#   ylim(0,1) + 
+#   xlab('n') + 
+#   ylab('k') + 
+#   geom_ribbon(aes(ymin = y3, ymax = 1, fill = 'AG')) + 
+#   geom_ribbon(aes(ymin = ifelse(xvals > c/2, c/2, 0),
+#                   ymax = ifelse(y3 > c/2, y3, 0),
+#                   fill = 'Cyclic')) + 
+#   geom_ribbon(aes(ymin = ifelse(xvals > c - 1/2, f1(xvals), 0),
+#                   ymax = ifelse(xvals > c - 1/2, pmin(xvals, c/2), 0),
+#                   fill = 'AG-INV-GLY')) + 
+#   geom_ribbon(aes(ymin = ifelse(xvals > c - 1/2, c - 1/2, 0),
+#                   ymax = ifelse(xvals > c - 1/2, f1(xvals), 0),
+#                   fill = 'INV-GLY')) +
+#  geom_ribbon(aes(ymin = 0, 
+#                  ymax = pmin(y3, rep(c - 1/2, length(y3))), fill = "GLY") ) + 
+#   
+# #   geom_ribbon(aes(ymin = y2, ymax = 1, fill = 'AG-INV')) + 
+#     scale_fill_discrete(name = "Equilibrium")+
+#     theme(panel.grid.major=element_blank(),
+#       panel.grid.minor=element_blank(),
+#       plot.background=element_blank(),
+#       panel.background=element_blank(),
+#       panel.border=element_blank()
+#       ) + 
+#   ggtitle(paste('Glycolytic Mean-Field Phase Diagram for c =', toString(c)))
+# plot(q)
 
 
 ### Basanta Ribbons holding c constant < 1/2
@@ -227,49 +271,7 @@ plot(q)
 # plot(q)
 
 
-### Phase Diagram for Toxin Game
-# ids <- factor(c("P", "P-R" , "Interior", "Cyclic"))
-#               
-# # ids <- factor(c("1.1", "2.1", "1.2", "2.2", "1.3", "2.3"))
-# 
-# values <- data.frame(
-#   id = ids,
-#   value = ids
-# )
 
-# rep.times <- c(5,3,3,4)
-# poly.1.x <- c(0,0,1,1, g - e)
-# poly.1.y <- c(0,1,1, 1 + e - g, 0)
-# poly.2.x <- c(g, 1, 1)
-# poly.2.y <- c(e, 1 + e - g, e/g)
-# poly.3.x <- c(g, 1, 1)
-# poly.3.y <- c(e, e/g, e)
-# poly.4.x <- c(g - e, g, 1, 1)
-# poly.4.y <- c(0,e,e,0)
-#               
-# positions <- data.frame(
-#   id = rep(ids, rep.times),
-#   x = c(poly.1.x, poly.2.x, poly.3.x, poly.4.x),
-#   y = c(poly.1.y, poly.2.y, poly.3.y, poly.4.y)
-# )
-# 
-# 
-# # Currently we need to manually merge the two together
-# datapoly <- merge(values, positions, by=c("id"))
-# p <- ggplot(datapoly, aes(x=x, y=y)) +
-#   geom_polygon(aes(fill=value, group=id)) + 
-#   xlab('f') + 
-#   ylab('h') + 
-#   ggtitle('Toxin Mean-Field Phase Diagram') + 
-#   scale_fill_discrete(name = "Equilibrium") + 
-#   theme(panel.grid.major=element_blank(),
-#     panel.grid.minor=element_blank(),
-#     plot.background=element_blank(),
-#     panel.background=element_blank(),
-#     panel.border=element_blank()
-#     )
-# 
-# plot(p)
 
 ### Phase Diagram for Dingli Game
 
