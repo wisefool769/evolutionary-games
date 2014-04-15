@@ -1,21 +1,9 @@
-# When using geom_polygon, you will typically need two data frames:
-# one contains the coordinates of each polygon (positions),  and the
-# other the values associated with each polygon (values).  An id
-# variable links the two together
-
-
 library(ggplot2)
 library(e1071)
 
-# myplotSVM <- e1071:::plot.svm
-# environment(myplotSVM)  <- .GlobalEnv
-# fix(myplotSVM)
+study.name <- 'dingli'
 
 freq_names <- c('Type.1', 'Type.2', 'Type.3')
-
-
-#legend
-#clusters 1, 2, 3, 12, 13, 23, 123
 
 freqs.to.class <- function(freqs){
 	f1 <- freqs$Type.1
@@ -49,24 +37,37 @@ freqs.to.class <- function(freqs){
 	return(3)
 }
 
+#name.format : c(1,2,3,12,13,23,123,cyclic)
+
+if (study.name == 'basanta'){
+  train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
+  plot.vars <- c('n', 'c', 'Coexistence')
+} else if(study.name == 'dingli'){
+  train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
+  plot.vars <- c('Beta', 'Delta', 'Coexistence')
+} else if(study.name == 'tm2'){
+  train <- data.frame(read.csv("../../Results/tm2/tm2_param-scan.csv", header=TRUE))
+  plot.vars <- c('f', 'h', 'Coexistence')
+} else if(study.name == 'b2'){  
+  train <- data.frame(read.csv("../../Results/b2/b2_param-scan.csv",header=TRUE))
+  plot.vars <- c('k', 'n', 'Coexistence')
+  train <- train[-22,]
+} else if(study.name == 'b3'){
+  train <- data.frame(read.csv("../../Results/b3/b3_param-scan.csv",header=TRUE))
+  plot.vars <- c('k', 'n', 'Coexistence')
+}
 
 
-#train <- data.frame(read.csv("../../Results/Basanta/basanta_param-scan.csv", header=TRUE))
-#plot.vars <- c('n', 'c', 'Coexistence')
 
-# train <- data.frame(read.csv("../../Results/Dingli/dingli_param-scan.csv", header=TRUE))
-# plot.vars <- c('Beta', 'Delta', 'Coexistence')
 
-# train <- data.frame(read.csv("../../Results/tm2/tm2_param-scan.csv", header=TRUE))
-# plot.vars <- c('f', 'h', 'Coexistence')
 
-train <- data.frame(read.csv("../../Results/b2/b2_param-scan.csv",
-header=TRUE)) 
-plot.vars <- c('k', 'n', 'Coexistence')
+
+
+
 
 
 num.pts <- dim(train)[1]
-coex.labels <- 
+
 train$Coexistence <- 
 	as.factor(sapply(
 		1:num.pts,
@@ -75,25 +76,34 @@ train$Coexistence <-
 
 
 
-# Dingli
-# train <- train[train$Beta<=5 & train$Delta <= 5 & train$Coexistence != 123,]
-# train$Coexistence <- droplevels(train$Coexistence)
-# svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
-# plot(svm.model, train[,plot.vars])
+if (study.name == 'basanta'){
+  
+  train <- train[train$c <= 1 & train$n <= 1,]
+  levels(train$Coexistence) <- c('AG','INV','GLY','A-I', 'A-G', 'Int')
+  svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "linear", cost = 10000)
+  plot(svm.model, train[,plot.vars], 
+       col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
+  )
+} else if(study.name == 'dingli'){
+  train <- train[train$Beta<=5 & train$Delta <= 5 & train$Coexistence != 123,]
+  train$Coexistence <- droplevels(train$Coexistence)
+  levels(train$Coexistence) <- c('OC-OB', 'OC-MM')
+  svm.model <- svm(Coexistence ~ Beta + Delta, data = train, cost = 1000)
+  plot(svm.model, train[,plot.vars])
+} else if(study.name == 'tm2'){
+  levels(train$Coexistence) <- c('P', 'R', 'P-R')
+  svm.model <- svm(Coexistence ~ h + f, data = train, kernel = "linear", cost = 10000)
+  plot(svm.model, train[,plot.vars], col = c("blue", "yellow", "green"))
+} else if(study.name == 'b2'){
+  train <- train[train$c <= 1 & train$n <= 1,]
+  levels(train$Coexistence) <- c('AG','GLY','INV-GLY', 'Int')
+  svm.model <- svm(Coexistence ~ k + n, data = train, kernel = "linear", cost = 10000)
+  plot(svm.model, train[,plot.vars], col = c("yellow", "blue", "red", "green"))
+} else if(study.name == 'b3'){
+  svm.model <- svm(Coexistence ~ k + n, data = train, kernel = "linear", cost = 10000)
+  plot(svm.model, train[,plot.vars])
+}
 
 
 
-## train <- train[train$c <= 1 & train$n <= 1,]
-## svm.model <- svm(Coexistence ~ n + c, data = train, kernel = "linear", cost = 10000)
-## plot(svm.model, train[,plot.vars], 
-## 	col = c("red", "yellow", "blue", "orange", "purple", "pink"), main = NULL
-## 	)
-
-
-train <- train[train$c <= 1 & train$n <= 1,]
-svm.model <- svm(Coexistence ~ k + n, data = train, kernel = "linear", cost = 10000)
-plot(svm.model, train[,plot.vars], col = c("yellow", "blue", "pink", "green"))
-
-# svm.model <- svm(Coexistence ~ h + f, data = train, kernel = "linear", cost = 10000)
-# plot(svm.model, train[,plot.vars], col = c("blue", "yellow", "green"))
 

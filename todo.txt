@@ -1,11 +1,16 @@
 Todo
-commit to git
+figure out what the mean-field diagram looks like in terms of c and n
 Put in results from new simulation and do more sims if needed
+explain said results
 look over email and make more changes
 make some simplex type graphics
-replace basanta result with nicer graph after sims run
-Proofread
+look at location of fixed point in simulation
 
+
+Proofread
+print out the draft that was sent to durrett
+commit to git
 Fix explanation of projective transformation
 Make a new Dingli graph without 123
 Put in new graphs
+replace basanta result with nicer graph after sims run

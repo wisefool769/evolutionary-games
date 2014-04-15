@@ -63,25 +63,25 @@
 # 
 # plot(p)
 
-# ## Plots functions for Basanta Game
-# k <- 0.5
-# 
-# q <- ggplot(data.frame(x=c(0, 10)), aes(x)) +
-#     xlim(0,1) +
-#     ylim(0,1) +
-#     geom_vline(xintercept = 0.5, colour = "red") +
-#     stat_function(fun=function(x) k , colour = "green") +
-#      stat_function(fun = function(x) k * (1 - x) / x, colour = "blue") +
-#     stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "yellow") +
-#   stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "purple") +
-#     theme(panel.grid.minor = element_blank(),
-#           panel.grid.major = element_blank(),
-#           panel.background = element_blank()) +
-#     xlab('n') +
-#     ylab('c')
-# 
-#     
-# plot(q)
+# ## Plots functions for Basanta Game holding k constant
+k <- 0.2
+
+q <- ggplot(data.frame(x=c(0, 10)), aes(x)) +
+    xlim(0,1) +
+    ylim(0,1) +
+    geom_vline(xintercept = 0.5, colour = "red") +
+    stat_function(fun=function(x) k , colour = "green") +
+     stat_function(fun = function(x) k * (1 - x) / x, colour = "blue") +
+    stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "yellow") +
+  stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "purple") +
+    theme(panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.background = element_blank()) +
+    xlab('n') +
+    ylab('c')
+
+    
+plot(q)
 
 
 #Functions for Basanta holding c constant > 1/2
