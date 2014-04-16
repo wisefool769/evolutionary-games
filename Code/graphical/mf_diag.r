@@ -64,44 +64,44 @@
 # plot(p)
 
 # ## Plots functions for Basanta Game holding k constant
-k <- 0.2
-
-q <- ggplot(data.frame(x=c(0, 10)), aes(x)) +
-    xlim(0,1) +
-    ylim(0,1) +
-    geom_vline(xintercept = 0.5, colour = "red") +
-    stat_function(fun=function(x) k , colour = "green") +
-     stat_function(fun = function(x) k * (1 - x) / x, colour = "blue") +
-    stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "yellow") +
-  stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "purple") +
-    theme(panel.grid.minor = element_blank(),
-          panel.grid.major = element_blank(),
-          panel.background = element_blank()) +
-    xlab('n') +
-    ylab('c')
-
-    
-plot(q)
-
-
-#Functions for Basanta holding c constant > 1/2
-# c <- 0.6
+# k <- 0.5
 # 
 # q <- ggplot(data.frame(x=c(0, 10)), aes(x)) +
 #     xlim(0,1) +
 #     ylim(0,1) +
-#       stat_function(fun = function(x) c/2, colour = "red") + 
-#       stat_function(fun=function(x) x , colour = "green") +
-# stat_function(fun = function(x) c * x / (1 - c + 2 * x), colour = "purple") +
-#    stat_function(fun = function(x) c - 1/2) + 
+#     geom_vline(xintercept = 0.5, colour = "red") +
+#     stat_function(fun=function(x) k , colour = "green") +
+#      stat_function(fun = function(x) k * (1 - x) / x, colour = "blue") +
+#     stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "yellow") +
+#   stat_function(fun = function(x) k * (x - 1) / (2 * k - x), colour = "purple") +
 #     theme(panel.grid.minor = element_blank(),
 #           panel.grid.major = element_blank(),
 #           panel.background = element_blank()) +
-#     xlab('n') +
-#     ylab('k')
-# 
-#   
+#     xlab('c') +
+#     ylab('n')
+
+    
 # plot(q)
+
+
+#Functions for Basanta holding c constant > 1/2
+c <- 0.4
+
+q <- ggplot(data.frame(x=c(0, 10)), aes(x)) +
+    xlim(0,1) +
+    ylim(0,1) +
+      stat_function(fun = function(x) c/2, colour = "red") + 
+      stat_function(fun=function(x) x , colour = "green") +
+stat_function(fun = function(x) c * x / (1 - c + 2 * x), colour = "purple") +
+   stat_function(fun = function(x) c - 1/2) + 
+    theme(panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.background = element_blank()) +
+    xlab('n') +
+    ylab('k')
+
+  
+plot(q)
 
 ### Basanta Ribbons holding c constant > 1/2
 # c <- 0.6
@@ -190,6 +190,58 @@ plot(q)
 #   ggtitle(paste('Glycolytic Mean-Field Phase Diagram for c =', toString(c)))
 # plot(q)
 
+
+### Basanta Ribbons holding k constant 0.5
+# k <- 0.5
+# f1 <- function(x){ #invadability of A/I
+#   return(k * (1 - x) / x)
+# }
+# 
+# 
+# 
+# f3 <- function(x){
+#   return(x)
+# }
+# 
+# 
+# 
+# 
+# xvals = seq(0,1,0.001)
+# crvs <- data.frame(x = xvals,
+#                    y1 = f1(xvals))
+# 
+# 
+# 
+# q <- ggplot(crvs, aes(x = x)) + 
+#   xlim(0,1) + 
+#   ylim(0,1) + 
+#   xlab('c') + 
+#   ylab('n') + 
+# 
+# geom_ribbon(aes(ymin = 0,
+#                   ymax = ifelse(x < 0.5, y1, 0),
+#                   fill = 'AG-INV')) + 
+# geom_ribbon(aes(ymin = 0, 
+#                 ymax = ifelse(x < 0.336, 1, 0), 
+#                 fill = 'AG-INV')) + 
+#   geom_ribbon(aes(ymin = ifelse(x > 0.336, y1, 0),
+#                   ymax = ifelse(x > 0.336, 1, 0),
+#                   fill = 'Int')) +
+# geom_ribbon(aes(ymin = ifelse(x > 0.5, 0.5, 0), 
+#                 ymax = ifelse(x > 0.5, 1, 0), 
+#                 fill = 'Cyclic')) +
+#   geom_ribbon(aes(ymin = 0,
+#                   ymax = ifelse(x > 0.5, 0.5, 0),
+#                   fill = 'AG')) +
+#     scale_fill_discrete(name = "Equilibrium")+
+#     theme(panel.grid.major=element_blank(),
+#       panel.grid.minor=element_blank(),
+#       plot.background=element_blank(),
+#       panel.background=element_blank(),
+#       panel.border=element_blank()
+#       ) + 
+#   ggtitle(paste('Glycolytic Mean-Field Phase Diagram for k =', toString(k)))
+# plot(q)
 ###Plot Ribbons for Basanta Game
 # k <- 0.05
 # f1 <- function(x){

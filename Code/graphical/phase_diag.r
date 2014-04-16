@@ -1,7 +1,7 @@
 library(ggplot2)
 library(e1071)
 
-study.name <- 'dingli'
+study.name <- 'b2'
 
 freq_names <- c('Type.1', 'Type.2', 'Type.3')
 

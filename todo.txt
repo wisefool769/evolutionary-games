@@ -1,13 +1,51 @@
 Todo
-figure out what the mean-field diagram looks like in terms of c and n
-Put in results from new simulation and do more sims if needed
-explain said results
+reconcile sims and mean-field diagram
+reconcile location of fixed point
 look over email and make more changes
 make some simplex type graphics
-look at location of fixed point in simulation
+see if more sims would be useful
+Abstract line 3: select out -> out compete
 
+
+
+
+
+What is the stochastic update rule in the voter model? Tell the reader.
+
+Page 7: in spatiall games the arrangement and proportion of different cell types is generally unimportant? Are you thinking it is a Markov chain that converges to equilibrium from any initial state?
+
+Page 8 line -4: For a two strategy subgame … In general is confusing. This is only true since we made the diagonal 0.
+
+Page 10 line 8: display formula so it doesn’t mess up line spacing.
+
+Page 11, Figure 3: Is this d=3. How do the regions compare to the replicator equation? What the x’s and 0’s
+
+Page 12: how does the limit of the spatial model compare to the fixed point of the replicator equation.
+
+Page 13, multiple myeloma, line 2 spaces missing arund (OB)
+
+Display formula for B.
+
+The projective transformation moves the fixed point but in this case does not move it to the barycenter. See th formula in Dingli’s paper.
+
+Page 14. Figure 5. I think words might be better than the pictures here.
+
+Figure 6. This is densities versus time in the simulation, right.
+
+Page 15, Figure 7. The colors completely disappear here. Do we really have coexistence? The interior fixed point is unstable so I would expect only 12 and 13.
+Page 16: why the funny indenting?
+
+Page 18:  omit future work.
+
+First paragraph; “The IPS retains many of the important dynamical features of the mean-field approx.”
+This is backwards. The spatial model is the more accurate description.
+
+The second paragraph is a little overstated. You didn’t really look at clinical applications. Ypou are just parroting what you read.
+
+For me the real open problem is can three strategies coexist in a two dimensions
 
 Proofread
+look at location of fixed point in simulation
 print out the draft that was sent to durrett
 commit to git
 Fix explanation of projective transformation
